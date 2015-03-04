@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hank Quinlan, Horrible Cop, Launches Site"
+title: "Hello World"
 date: 2015-03-34
 ---
 ### Hello World
