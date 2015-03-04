@@ -1,11 +1,38 @@
 ---
 layout: default
 title: Welcome to my Blog
----
-### My Blogs
-<div class="posts">
+--- 
+ 
 {% for post in site.posts %}
-	 <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	<div class="col-sm-6">
+      <article class="post-entry-wrap">
+        <div class="post-entry clearfix">
+          <div class="post-header">
+            <h2>
+              <a href="{{ post.url }}">
+                <img src="images/none.jpg" alt="">
+                <span class="post-title">{{ post.title }}</span>
+              </a>
+            </h2>
+          </div>
+          <div class="post-meta pad20">
+            <div class="row">
+              <div class="col-xs-6">
+                <span class="post-meta-date font12">{{ post.date | date_to_string }}</span>
+              </div>
+              <div class="col-xs-6 text-right">
+                <div class="post-meta-category">
+                  <a href="#" class="label label-danger">{{ post.tag }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="post-excerpt padLR20 mb20">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem voluptatum ad excepturi, nobis quam quia possimus, fuga magnam id ipsam tenetur, alias pariatur. Iure excepturi facere quasi, adipisci laudantium nam?</p>
+          </div>
+        </div>
+      </article>
+    </div>
 {% endfor %}
-</div>
+ 
 
