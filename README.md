@@ -1,2 +1,2 @@
 # codingpajamas
-a blog for codingpajamas
+...will blog before bed :p
