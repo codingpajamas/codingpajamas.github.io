@@ -62,11 +62,17 @@
       							</div>
       							<div class="row">
       								<div class="col-xs-6">
-      									<span class="post-meta-date font12">February 25th, 2015</span>
+      									<span class="post-meta-date font12">
+                          <i class="fa fa-calendar mr5"></i>
+                          {{ page.date | date_to_string }}
+                        </span>
       								</div>
       								<div class="col-xs-6 text-right">
       									<div class="post-meta-category">
-      										<a href="#" class="label label-danger">{{ page.tag }}</a>
+      										<a href="#" class="label label-danger">
+                            <i class="fa fa-tag mr5"></i>
+                            {{ page.tag }}
+                          </a>
       									</div>
       								</div>
       							</div> 
@@ -76,6 +82,14 @@
       						</div>
       					</div>
       				</article>
+              <div class="row font-gray mb20">
+                <div class="col-sm-6">
+                  © <a href="/">CodingPajamas</a> 2015
+                </div>
+                <div class="col-sm-6 text-right">
+                  Powered By <a href="https://pages.github.com/">GitHub Pages</a>
+                </div>
+              </div>
       			</div>  
           </div>
         </div>

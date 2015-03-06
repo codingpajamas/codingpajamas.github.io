@@ -18,11 +18,17 @@ title: Welcome to my Blog
           <div class="post-meta pad20">
             <div class="row">
               <div class="col-xs-6">
-                <span class="post-meta-date font12">{{ post.date | date_to_string }}</span>
+                <span class="post-meta-date font12">
+                  <i class="fa fa-calendar mr5"></i>
+                  {{ post.date | date_to_string }}
+                </span>
               </div>
               <div class="col-xs-6 text-right">
                 <div class="post-meta-category">
-                  <a href="#" class="label label-danger">{{ post.tag }}</a>
+                  <a href="#" class="label label-danger">
+                    <i class="fa fa-tag mr5"></i>
+                    {{ post.tag }}
+                  </a>
                 </div>
               </div>
             </div>
