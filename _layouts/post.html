@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/stylesheets/misc.css" media="screen"> 
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/dark.min.css">
+    <link rel="stylesheet" href="/stylesheets/dark.min.css">
 	<script src="/js/highlight.min.js"></script>
 
     <!--[if lt IE 9]>
@@ -38,35 +38,35 @@
         </header>
         <div class="container" id="mainContent">
           <div class="row"> 
-          	<div class="col-sm-9" id="postContent">
-				<article class="post-entry-wrap">
-					<div class="post-page clearfix">
-						<div class="post-header">
-							<img src="{{ page.image }}" alt="">
-						</div>
-						<div class="post-meta pad40">
-							<div class="row">
-								<div class="col-xs-12">
-									<h1 class="page-title">{{ page.title }}</h1>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">
-									<span class="post-meta-date font12">February 25th, 2015</span>
-								</div>
-								<div class="col-xs-6 text-right">
-									<div class="post-meta-category">
-										<a href="#" class="label label-danger">{{ page.tag }}</a>
-									</div>
-								</div>
-							</div> 
-						</div> 
-						<div class="post-content padLR40 mb20">
-							 {{ content | markdownify }} 
-						</div>
-					</div>
-				</article>
-			</div>  
+          	<div class="col-sm-12 col-md-10 col-md-push-1" id="postContent">
+      				<article class="post-entry-wrap">
+      					<div class="post-page clearfix">
+      						<div class="post-header">
+      							<img src="{{ page.image }}" alt="">
+      						</div>
+      						<div class="post-meta pad40">
+      							<div class="row">
+      								<div class="col-xs-12">
+      									<h1 class="page-title">{{ page.title }}</h1>
+      								</div>
+      							</div>
+      							<div class="row">
+      								<div class="col-xs-6">
+      									<span class="post-meta-date font12">February 25th, 2015</span>
+      								</div>
+      								<div class="col-xs-6 text-right">
+      									<div class="post-meta-category">
+      										<a href="#" class="label label-danger">{{ page.tag }}</a>
+      									</div>
+      								</div>
+      							</div> 
+      						</div> 
+      						<div class="post-content padLR40 mb20">
+      							 {{ content | markdownify }} 
+      						</div>
+      					</div>
+      				</article>
+      			</div>  
           </div>
         </div>
  		

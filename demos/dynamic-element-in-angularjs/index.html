@@ -9,7 +9,7 @@ title: Dynamically Add Input Using AngularJS
 				<div ng-controller="CreateContactCtrl">
 					<h3 class="clearfix">
 						Contact Number
-						<a href="#" class="pull-right btn btn-primary" ng-click="addContactField()">Add One Field</a>
+						<button href="#" class="pull-right btn btn-primary" ng-click="addContactField()">Add One Field</button>
 					</h3>
 					<hr/>
 					<div class="row mb10"  ng-repeat="contact in contacts">
@@ -17,7 +17,7 @@ title: Dynamically Add Input Using AngularJS
 							<input type="type" class="form-control" name="contact[]" />
 						</div>
 						<div class="col-xs-2">
-							<a href="#" class="btn btn-warning btn-block" ng-click="removeContactField($index)">x</a>
+							<button href="#" class="btn btn-warning btn-block" ng-click="removeContactField($index)">x</button>
 						</div>
 					</div>  
 					<div class="row">

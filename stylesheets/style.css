@@ -81,8 +81,12 @@ body {
 	max-width: 100%;
 }
 
-.post-content p, .post-content pre {
+.post-content p, .post-content pre, .post-content ul {
 	margin-bottom: 30px;
+}
+.post-content li {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .post-content pre {
 	padding: 0 !important;

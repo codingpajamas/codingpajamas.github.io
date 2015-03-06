@@ -20,6 +20,10 @@
 	padding-left: 10px !important;
 	padding-right: 10px !important;
 }
+.padLR30 {
+	padding-left: 30px !important;
+	padding-right: 30px !important;
+}
 .padTB10 {
 	padding-top: 10px !important;
 	padding-bottom: 10px !important;
@@ -62,6 +66,9 @@
 }
 .mt20 {
 	margin-top: 20px !important;
+}
+.mr20 {
+	margin-right: 20px !important;
 }
 
 /*fonts*/
