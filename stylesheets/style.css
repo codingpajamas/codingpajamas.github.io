@@ -42,8 +42,7 @@ body {
 .post-header {
 	position: relative;
 	overflow: hidden;
-	border-bottom: 1px solid #eee;
-	height: 250px;
+	border-bottom: 1px solid #eee; 
 }
 	.post-page .post-header {
 		height: auto;
