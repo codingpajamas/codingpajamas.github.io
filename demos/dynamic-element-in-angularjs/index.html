@@ -1,0 +1,47 @@
+---
+layout: demo
+title: Dynamically Add Input Using AngularJS
+---
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-8 col-sm-push-2 col-md-6 col-md-push-3">
+			<form id="angularForm" class="pad20 bg-white shadow" ng-app="contactsApp">
+				<div ng-controller="CreateContactCtrl">
+					<h3 class="clearfix">
+						Contact Number
+						<a href="#" class="pull-right btn btn-primary" ng-click="addContactField()">Add One Field</a>
+					</h3>
+					<hr/>
+					<div class="row mb10"  ng-repeat="contact in contacts">
+						<div class="col-xs-10">
+							<input type="type" class="form-control" name="contact[]" />
+						</div>
+						<div class="col-xs-2">
+							<a href="#" class="btn btn-warning btn-block" ng-click="removeContactField($index)">x</a>
+						</div>
+					</div>  
+					<div class="row">
+						<div class="col-xs-12">
+							<input type="submit" class="btn btn-primary btn-block" value="Submit" />
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('contactsApp', []);
+        app.controller('CreateContactCtrl', function($scope) {
+            $scope.contacts = [{type: 'text'}];
+
+            $scope.addContactField = function(){
+                $scope.contacts.push({type: 'text'});  
+            };
+
+            $scope.removeContactField = function(index){ 
+                $scope.contacts.splice( index, 1 );
+            };
+        }); 
+	</script>
+ 
