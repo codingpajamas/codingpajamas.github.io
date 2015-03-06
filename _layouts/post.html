@@ -3,17 +3,23 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width">
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <!-- <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen"> -->
     <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/misc.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/misc.css" media="screen"> 
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/dark.min.css">
+	<script src="/js/highlight.min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>CodingPajamas {{ page.title }}</title>
+    <title>CodingPajamas | {{ page.title }}</title>
   </head>
 
   <body> 
@@ -36,12 +42,12 @@
 				<article class="post-entry-wrap">
 					<div class="post-page clearfix">
 						<div class="post-header">
-							<img src="/images/ng.png" alt="">
+							<img src="{{ page.image }}" alt="">
 						</div>
 						<div class="post-meta pad40">
 							<div class="row">
 								<div class="col-xs-12">
-									<h1 class="page-title">Introduction To AngularJS Filters</h1>
+									<h1 class="page-title">{{ page.title }}</h1>
 								</div>
 							</div>
 							<div class="row">
@@ -50,17 +56,11 @@
 								</div>
 								<div class="col-xs-6 text-right">
 									<div class="post-meta-category">
-										<a href="#" class="label label-danger">Angularjs</a>
+										<a href="#" class="label label-danger">{{ page.tag }}</a>
 									</div>
 								</div>
 							</div> 
-						</div>
-						<div class="padLR40 text-center"> 
-								<div class="panel panel-default">
-									<a href="#" target="new" class="btn btn-primary btn-lg m20">DEMO</a>
-									<a href="#" target="new" class="btn btn-success btn-lg m20">DOWNLOAD</a>
-								</div> 
-						</div>
+						</div> 
 						<div class="post-content padLR40 mb20">
 							 {{ content | markdownify }} 
 						</div>
@@ -69,7 +69,8 @@
 			</div>  
           </div>
         </div>
- 
+ 		
+ 		<script>hljs.initHighlightingOnLoad();</script>
 
         <script type="text/javascript">
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

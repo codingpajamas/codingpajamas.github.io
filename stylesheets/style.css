@@ -76,23 +76,28 @@ body {
 }
 .post-content {
 
-}
-
-#mainSidebar {
-	padding-top: 50px;
-	color: #666;
-}
+} 
 
 .post-content img {
 	max-width: 100%;
 }
 
-.post-content p {
-	margin-bottom: 40px;
+.post-content p, .post-content pre {
+	margin-bottom: 30px;
+}
+.post-content pre {
+	padding: 0 !important;
 }
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .page-title {
  	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-weight: 700;
+	margin-bottom: 30px !important;
+}
+
+
+#mainSidebar {
+	padding-top: 50px;
+	color: #666;
 }
 
 .sidebar-widget {

@@ -2,7 +2,8 @@
 layout: post
 title: "How to dynamically add input on form using angularjs"
 date: 2015-03-04
-tag: helloworld
+tag: angularjs
+image: /images/ng.png
 --- 
 
 ## Introduction
@@ -65,7 +66,7 @@ Next create a controller called ```CreateContactCtrl``` and declare it in the wr
 
 ~~~ javascript
 <script type="text/javascript">
-	var app = angular.module('contactsApp', []);
+    var app = angular.module('contactsApp', []);
     app.controller('CreateContactCtrl', function($scope) {
         $scope.contacts = [{type: 'text'}];
 
