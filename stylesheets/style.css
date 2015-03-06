@@ -129,3 +129,9 @@ body {
 	padding: 0px;
 	margin: 0px;
 }
+ 
+#demoLinks {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
