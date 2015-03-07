@@ -11,16 +11,18 @@ body {
 	background: #fff;
 	border-bottom: 1px solid #ddd;
 }
-#mainLogo {
+#mainLogo, #mainLogo:hover{
 	font-weight: bold;
 	font-size: 20px;
-	padding: 0;
+	padding: 0 5px 0 0;
 	margin: 0;
 	display: inline-block;
+	color: #c9302c;
+	text-decoration: none;
 }
 #mainLogo img {
-	height: 40px;
-
+	height: 35px;
+	border: 2px solid #fff;  
 }
 
 #mainContent {

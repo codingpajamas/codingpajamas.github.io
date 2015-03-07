@@ -3,7 +3,7 @@ layout: post
 title: "How to dynamically add input on form using angularjs"
 date: 2015-03-04
 tag: angularjs
-image: /images/ng.png
+image: /images/pimg/ng.png
 --- 
 {:.text-center}
 [Check Demo](/demos/dynamic-element-in-angularjs/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"} [Check full code](#the-full-code){:.btn.btn-primary.btn-lg.padLR30}
