@@ -99,6 +99,16 @@ body {
 	margin-bottom: 30px !important;
 }
 
+.post-content h2, .post-content h3, .post-content .page-subheader {
+ 	margin-top: 50px;
+ 	clear: both;
+}
+
+.post-content .page-subheader {
+	color: #444 !important;
+	font-weight: 400 !important; 
+}
+
 
 #mainSidebar {
 	padding-top: 50px;

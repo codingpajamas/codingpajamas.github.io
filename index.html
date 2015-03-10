@@ -3,8 +3,9 @@ layout: default
 title: Welcome to my Blog
 --- 
  
-{% for post in site.posts reversed %}
-	<div class="col-sm-6 post-archive">
+{% for post in site.posts %}
+  {% if post.status == 'published' %}
+    <div class="col-sm-6 post-archive">
       <article class="post-entry-wrap">
         <div class="post-entry clearfix">
           <div class="post-header">
@@ -25,10 +26,12 @@ title: Welcome to my Blog
               </div>
               <div class="col-xs-6 text-right">
                 <div class="post-meta-category">
-                  <a href="#" class="label label-danger">
-                    <i class="fa fa-tag mr5"></i>
-                    {{ post.tag }}
-                  </a>
+                  {% for tag in post.tags %}
+                    <a href="/tag/{{ tag }}" class="label label-danger ml5">
+                      <i class="fa fa-tag mr5"></i>
+                      {{ tag }}
+                    </a>
+                  {% endfor %}  
                 </div>
               </div>
             </div>
@@ -36,6 +39,7 @@ title: Welcome to my Blog
         </div>
       </article>
     </div>
+  {% endif %}
 {% endfor %}
  
 

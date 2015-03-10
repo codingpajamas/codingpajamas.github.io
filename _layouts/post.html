@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/misc.css"> 
 
     <link rel="stylesheet" href="/stylesheets/dark.min.css">
-	<script src="/js/highlight.min.js"></script>
+  <script src="/js/highlight.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,7 +28,7 @@
           <div class="row">
             <div class="col-xs-6 col-sm-8">
               <div class="pad10">
-                <a id="mainLogo" class="shadow"> 
+                <a id="mainLogo" class="shadow" href="/"> 
                   <img src="/images/logo.png"><span>:codingpajamas</span> 
                 </a>
               </div>
@@ -47,40 +47,42 @@
         </header>
         <div class="container" id="mainContent">
           <div class="row"> 
-          	<div class="col-sm-12 col-md-10 col-md-push-1" id="postContent">
-      				<article class="post-entry-wrap">
-      					<div class="post-page clearfix">
-      						<div class="post-header">
-      							<img src="{{ page.image }}" alt="">
-      						</div>
-      						<div class="post-meta pad40">
-      							<div class="row">
-      								<div class="col-xs-12">
-      									<h1 class="page-title">{{ page.title }}</h1>
-      								</div>
-      							</div>
-      							<div class="row">
-      								<div class="col-xs-6">
-      									<span class="post-meta-date font12">
+            <div class="col-sm-12 col-md-10 col-md-push-1" id="postContent">
+              <article class="post-entry-wrap">
+                <div class="post-page clearfix">
+                  <div class="post-header">
+                    <img src="{{ page.image }}" alt="">
+                  </div>
+                  <div class="post-meta pad40">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <h1 class="page-title">{{ page.title }}</h1>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <span class="post-meta-date font12">
                           <i class="fa fa-calendar mr5"></i>
                           {{ page.date | date_to_string }}
                         </span>
-      								</div>
-      								<div class="col-xs-6 text-right">
-      									<div class="post-meta-category">
-      										<a href="#" class="label label-danger">
-                            <i class="fa fa-tag mr5"></i>
-                            {{ page.tag }}
-                          </a>
-      									</div>
-      								</div>
-      							</div> 
-      						</div> 
-      						<div class="post-content padLR40 mb20">
-      							 {{ content | markdownify }} 
-      						</div>
-      					</div>
-      				</article>
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <div class="post-meta-category">
+                          {% for tag in page.tags %}
+                            <a href="#" class="label label-danger ml5">
+                              <i class="fa fa-tag mr5"></i>
+                              {{ tag }}
+                            </a>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div> 
+                  </div> 
+                  <div class="post-content padLR40 mb20">
+                     {{ content | markdownify }} 
+                  </div>
+                </div>
+              </article>
               <div class="row font-gray mb20">
                 <div class="col-sm-6">
                   © <a href="/">CodingPajamas</a> 2015
@@ -89,11 +91,11 @@
                   Powered By <a href="https://pages.github.com/">GitHub Pages</a>
                 </div>
               </div>
-      			</div>  
+            </div>  
           </div>
         </div>
- 		
- 		<script>hljs.initHighlightingOnLoad();</script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
 
         <script type="text/javascript">
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

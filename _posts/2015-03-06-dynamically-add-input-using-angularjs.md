@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "How to dynamically add input on form using angularjs"
-date: 2015-03-04
-tag: angularjs
+date: 2015-03-06
+tags: [angularjs]
 image: /images/pimg/ng.png
+status: published
 --- 
 {:.text-center}
 [Check Demo](/demos/dynamic-element-in-angularjs/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"} [Check full code](#the-full-code){:.btn.btn-primary.btn-lg.padLR30}
@@ -25,13 +26,13 @@ So let's start.
 ~~~ html
 <form>
     <div class="wrapper">
-    	<button href="#" id="addField">Add One Field</button>
-    	<p>
-    	    <input type="text" class="form-control" name="contact[]" />
-    	    <button href="#" class="removeField">Remove</button>
-    	</p>
-    	<p><input type="submit" value="Submit" /></p>
-	</div>
+        <button href="#" id="addField">Add One Field</button>
+        <p>
+            <input type="text" class="form-control" name="contact[]" />
+            <button href="#" class="removeField">Remove</button>
+        </p>
+        <p><input type="submit" value="Submit" /></p>
+    </div>
 </form>
 ~~~
 This is a very simple form consists of:
