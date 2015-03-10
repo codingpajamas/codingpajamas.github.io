@@ -150,7 +150,7 @@ body {
 
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   #mainLogo span {
     display: none;
   }
