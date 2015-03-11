@@ -14,42 +14,45 @@ status: draft
 ExpressJS is one of the easier and more popular nodejs framework out there and you can find numerous blogs and tutorials in the internet.
 
 ## Problem
-Because ```express``` is an **unopinionated** framework, almost every tutorial in the internet does their tutorial in different way from others which confuses beginners specially in how they organize express application.
+Because ```express``` is an **unopinionated** framework, almost every tutorial in the internet does the same thing in different which confuses beginners specially in organizing files and directories of their express application.
 
 ## Solution
-This is not the only way of organizing your express application but this works for me and I'll share it to you.
+
+In this article we will follow a ```MVC```ish style where we have a ```model``` folder for our mongo schemas, a ```views``` folder for our templates and a ```routes``` folder for our routes which are going to act as our controllers. Also an ```index.js``` file as entry point to our express application. So let's start.
+
 
 ### 1. Intall ExpressJS
 
 ~~~ sh
 mkdir orgpress
-cd express
+cd orgpress
 ~~~
 
-Open your terminal and create ```orgpress``` directory then ```cd``` to it. Yes, I can't think of a better app name than combining **organize express** to become **orgpress**. And yes again, im on windows.
+Open your terminal and create ```orgpress``` directory then ```cd``` to it. Yes, I can't think of a better app name than combining **organize express** into **orgpress**. And yes again, im on windows.
 
 Create ```package.json``` by typing ```npm init``` and then fillup the terminal wizzard with the details for our application. Please refer to the image below.
 
 {:.text-center}
 ![npminit](/images/post/post-3-1.png)
 
+{:.mb0}
 Install ```express``` and register it in package.json as a dependency.
 
 ~~~sh
 npm install express --save
 ~~~
 
-We also need to install some of the most common express dependencies.
+We also need to install some of the most common modules used in express applications.
 
 {:.mb0}
-```jade``` for templating engine
+A templating engine, we will use ```jade``` for this tutorial. 
 
 ~~~sh
 npm install jade --save
 ~~~
 
 {:.mb0}
-```mongoose``` is an **odm** which will help us manipulate mongodb 
+An **odm** which will help us in mongodb, I usualy use ```mongoose```
 
 ~~~sh
 npm install mongoose --save
@@ -64,7 +67,7 @@ npm install body-parser --save
 
 After installing these modules successfully, we're now ready to create our express application.
 
-### 2. Creating express application
+### 2. Creating the files and sub-folders
 
 Let's create our ```orgpress``` file structure.
 
@@ -74,6 +77,7 @@ Let's create our ```orgpress``` file structure.
 		db.js
 	/models
 		blog.js
+		store.js
 	/node_modules
 	/public
 		/css
@@ -85,6 +89,7 @@ Let's create our ```orgpress``` file structure.
 	/routes
 		blogs.js
 		index.js
+		stores.js
 	/views
 		/blogs
 			index.js
@@ -95,11 +100,13 @@ Let's create our ```orgpress``` file structure.
 	package.json
 ~~~
 
-The ```/config``` folder will contains all configuration files such as the database config in ```db.js```.
+This is how I organize my ```express 4``` application. 
 
-The ```models``` folder contains our mongoose schemas.
+The ```/config``` folder contains all configuration files such as the database config in ```db.js```.
 
-The ```node_modules``` is where our dependency modules reside.
+The ```/models``` folder contains our mongoose schemas.
+
+The ```/node_modules``` is where our dependency modules reside.
 
 The ```/public``` folder is where our assets like css, javascript and image files go.
 
@@ -108,22 +115,18 @@ The ```/routes``` folder will contains our routes.
 The ```/views``` folder contains our template files. We created sub-folders to group the templates based on their types (or based on available schemas).
 
 
-An express application's heart is ```index.js``` which was declared as our ```main``` in ```package.json``` when installing express.
+The ```index.js```  is the heart of express applicatio and it is composed of 5 parts:
 
-~~~ javascript
-"main": "index.js"
-~~~
+1. **Include dependencies**
+2. **Set configurations**
+3. **Create the custom middlewares**
+4. **Declare routes**
+5. **Start express application**
 
-This ```index.js``` file is composed of 5 parts :
-
-1. Include dependencies
-2. Set configurations
-3. Declare the middlewares
-4. Declare routes
-5. Start express application
+### 3. Creating express application
 
 {:.page-subheader}
-### 2.a Include dependencies
+### 3.a Include the dependencies
 
 When creating an express application, the most important part is adding your dependencies specially the ```express``` module.
 
@@ -136,12 +139,12 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 ~~~
 
-In the chunk of code above, we required ```express``` in our application and store it in a variable. Then we invoke it with ```express()``` to expose its APIs and saved it to ```app``` variable. 
+In the chunk of code above, we required ```express``` in our application and stored it in a variable. Then we invoke it with ```express()``` to exposed its APIs and saved it to ```app``` variable. 
 
 We also included the ```path```, ```bodyParser```, ```mongoose```. 
 
 {:.page-subheader}
-### 2.b Setup configurations
+### 3.b Setup configurations
 
 ~~~ js
 // configurations
@@ -153,3 +156,159 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 require('./config/db')(mongoose); /* database configuration */ 
 ~~~
+
+Basically, we're configuring express settings using ```app.set()```. You can find more properties to configure [at express docs](http://expressjs.com/api.html#app.settings.table){:target="new"}. And we use ```app.use``` to configure the middlewares from our dependency modules.
+
+If you noticed we didn't declare jade by ```require('jade')``` to include as our application dependency but we're using it in the configuration by setting it as a value of ```views engine```, that's because express imported it already behind the scene (but you still need to install ```jade``` module locally).
+
+And lastly, we configure ```mongoose``` to connect to mongodb by requiring the file (or in this case a module) ```db.js``` inside the ```/config``` folder and passed the ```mongoose``` object.
+
+
+~~~ javascript
+// '/config/db.js'
+module.exports = function(mongoose) {  
+	var dbURI = 'mongodb://localhost/orgpress';
+	mongoose.connect(dbURI);
+
+	mongoose.connection.on('connect', function(){
+		console.log('Mongoose connected on ' + dbURI);
+	});
+
+	mongoose.connection.on('error', function(err){
+		console.log('Mongoose connection : ' + err);
+	}); 
+}
+~~~
+
+
+{:.page-subheader}
+### 3.b Creating the routes
+
+This is where most of the beginners get confused, **structuring routes**. Normally routes can be created in the ```index.js``` file but as your application grows bigger, it'll get ugly. I've seen different ways but the cleanest is the **middleware** style of routing. 
+
+First we include the routes in our express application:
+
+~~~ javascript
+// call routes
+require('./routes')(app);
+~~~ 
+
+So let's create a ```routes``` folder which has an ```index.js``` as entry point. Then inside our index.js, we will call our other route files. 
+
+{:.mb0}
+Inside ```/routes/index.js```
+
+~~~ javascript
+// '/routes/index.js'
+module.exports = function (app) {
+    app.use('/blogs', require('./blogs'));
+    app.use('/stores', require('./stores'));
+    //and some other route files if you have more...
+};
+~~~
+
+{:.mb0}
+Inside ```/routes/blogs.js```
+
+~~~ javascript
+// '/routes/blogs.js'
+var express = require('express');
+var router = express.Router();
+var Blog = require('../models/blog');
+
+router.get('/', function(req, res){ 
+	Blog.find({},{},{}, function(err, blogs){
+		if(!err){
+			res.render('blogs/index.jade', {});
+		} else {
+			res.send(err);
+		}
+	});
+});
+
+module.exports = router;
+~~~
+
+{:.mb0}
+And let's create ```/routes/users.js``` too.
+
+~~~ javascript
+// '/routes/stores.js'
+var express = require('express');
+var router = express.Router();
+var Store = require('../models/store');
+
+router.get('/', function(req, res){ 
+	Store.find({},{},{}, function(err, stores){
+		if(!err){
+			res.render('stores/index.jade', {});
+		} else {
+			res.send(err);
+		}
+	});
+});
+
+module.exports = router;
+~~~
+
+{:.page-subheader}
+### 3.c The models
+
+As you can see in ```/routes/blog.js```, we required the ```/models/blog```. So let's create our **blog schema**.
+
+~~~ javascript
+// '/models/blog.js'
+var mongoose = require('mongoose');
+
+var blogSchema = new mongoose.Schema({
+	title: String, 
+	body: String, 
+	category: String, 
+	createdOn: {type: Date, default: Date.now()},
+	modifiedOn: {type: Date} 
+});
+
+module.exports = mongoose.model('Blog', blogSchema);
+~~~
+
+You might be wondering (and worrying maybe) why we have to do ```mongoose = require('mongoose')``` again, we already did that in the main ```index.js```. Don't worry about that because ```require``` will return the same mongoose object, it didn't instantiate the module twice.
+
+Let's create the ```store``` schema too since we create a controller for stores.
+
+~~~ javascript
+// '/models/store.js'
+var mongoose = require('mongoose');
+
+var storeSchema = new mongoose.Schema({
+	name: String,
+	location : String,
+	owner: String
+});
+
+module.exports = mongoose.model('Store', storeSchema);
+~~~
+
+{:.page-subheader}
+### 3.d The views
+
+
+
+
+{:.page-subheader}
+### 3.e Start our expressjs application
+
+In order to start express, we just need to listen to listen to a port.
+
+~~~ javascript
+// start app
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
+	console.log('Listening to port ' + port);
+})
+~~~
+
+Now go to your terminal, make sure that ```mongod``` is active, and run ```node index```. Then browse to [http://localhost:3000/stores](http://localhost:3000/stores) to test your ```expressjs v.4.x``` application.
+
+
+## Done!
+This is not the only way of organizing your express application but this works for me and it's simply well organized. There's also an ```express generator``` which was reserved for another post. 
