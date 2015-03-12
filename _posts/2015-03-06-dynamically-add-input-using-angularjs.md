@@ -6,7 +6,7 @@ tags: [angularjs]
 image: /images/pimg/ng.png
 status: published
 --- 
-{:.text-center}
+{:.text-center.panel.panel-default.padTB20}
 [Check Demo](/demos/dynamic-element-in-angularjs/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"} [Check full code](#the-full-code){:.btn.btn-primary.btn-lg.padLR30}
 
 ## Introduction
@@ -149,5 +149,5 @@ Done!
 </script>
 ~~~
 
-{:.text-center}
+{:.text-center.panel.panel-default.padTB20}
 [Check Demo](/demos/dynamic-element-in-angularjs/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"} [Check full code](#the-full-code){:.btn.btn-primary.btn-lg.padLR30}

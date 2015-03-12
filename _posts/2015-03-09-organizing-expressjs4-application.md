@@ -4,8 +4,11 @@ title: "Organizing your expressjs 4 apllication"
 date: 2015-03-09
 tags: [expressjs, nodejs]
 image: /images/pimg/expressjs.png
-status: draft
+status: published
 ---  
+
+{:.text-center.panel.panel-default.padTB20}
+[Check the code on Github](https://github.com/codingpajamas/orgpress){:.btn.btn-primary.btn-lg}{:target="new"}
 
 ## Introduction
 
@@ -14,7 +17,7 @@ status: draft
 ExpressJS is one of the easier and more popular nodejs framework out there and you can find numerous blogs and tutorials in the internet.
 
 ## Problem
-Because ```express``` is an **unopinionated** framework, almost every tutorial in the internet does the same thing in different which confuses beginners specially in organizing files and directories of their express application.
+Because ```express``` is an **unopinionated** framework, almost every tutorial in the internet does the same thing in different way which confuses beginners specially in organizing their express application.
 
 ## Solution
 
@@ -23,12 +26,12 @@ In this article we will follow a ```MVC```ish style where we have a ```model``` 
 
 ### 1. Intall ExpressJS
 
+Open your terminal and create ```orgpress``` directory then ```cd``` to it. Yes, I can't think of a better app name than combining **organize express** into **orgpress**. And yes again, im on windows.
+
 ~~~ sh
 mkdir orgpress
 cd orgpress
 ~~~
-
-Open your terminal and create ```orgpress``` directory then ```cd``` to it. Yes, I can't think of a better app name than combining **organize express** into **orgpress**. And yes again, im on windows.
 
 Create ```package.json``` by typing ```npm init``` and then fillup the terminal wizzard with the details for our application. Please refer to the image below.
 
@@ -45,7 +48,7 @@ npm install express --save
 We also need to install some of the most common modules used in express applications.
 
 {:.mb0}
-A templating engine, we will use ```jade``` for this tutorial. 
+For our templating engine, we will use ```jade```. 
 
 ~~~sh
 npm install jade --save
@@ -81,11 +84,8 @@ Let's create our ```orgpress``` file structure.
 	/node_modules
 	/public
 		/css
-			styles.css
 		/js
-			functions.js
-		images
-			logo.png
+		/images
 	/routes
 		blogs.js
 		index.js
@@ -93,9 +93,8 @@ Let's create our ```orgpress``` file structure.
 	/views
 		/blogs
 			index.js
-			create.js
-			edit.js
-			show.js
+		/stores
+			index.js
 	index.js
 	package.json
 ~~~
@@ -110,12 +109,12 @@ The ```/node_modules``` is where our dependency modules reside.
 
 The ```/public``` folder is where our assets like css, javascript and image files go.
 
-The ```/routes``` folder will contains our routes. 
+The ```/routes``` folder will contains our route files. 
 
 The ```/views``` folder contains our template files. We created sub-folders to group the templates based on their types (or based on available schemas).
 
 
-The ```index.js```  is the heart of express applicatio and it is composed of 5 parts:
+The ```index.js```  is the heart of express application and it is composed of 5 parts:
 
 1. **Include dependencies**
 2. **Set configurations**
@@ -128,7 +127,7 @@ The ```index.js```  is the heart of express applicatio and it is composed of 5 p
 {:.page-subheader}
 ### 3.a Include the dependencies
 
-When creating an express application, the most important part is adding your dependencies specially the ```express``` module.
+When creating an express application, the first part is adding your dependencies specially the ```express``` module.
 
 ~~~ js
 // declare dependencies
@@ -139,9 +138,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 ~~~
 
-In the chunk of code above, we required ```express``` in our application and stored it in a variable. Then we invoke it with ```express()``` to exposed its APIs and saved it to ```app``` variable. 
+In the chunk of code above, we required ```express``` in our application and stored it in a variable. Then we invoked it with ```express()``` to exposed its APIs and saved it to ```app``` variable. 
 
-We also included the ```path```, ```bodyParser```, ```mongoose```. 
+We also required the ```path```, ```bodyParser```, ```mongoose``` modules. 
 
 {:.page-subheader}
 ### 3.b Setup configurations
@@ -159,10 +158,11 @@ require('./config/db')(mongoose); /* database configuration */
 
 Basically, we're configuring express settings using ```app.set()```. You can find more properties to configure [at express docs](http://expressjs.com/api.html#app.settings.table){:target="new"}. And we use ```app.use``` to configure the middlewares from our dependency modules.
 
-If you noticed we didn't declare jade by ```require('jade')``` to include as our application dependency but we're using it in the configuration by setting it as a value of ```views engine```, that's because express imported it already behind the scene (but you still need to install ```jade``` module locally).
+If you noticed we didn't required ```jade``` when we're including our application dependencies but we're using it in the configuration by setting it as a value of ```views engine```, that's because express imported it already behind the scene (but you still need to install ```jade``` module locally).
 
 And lastly, we configure ```mongoose``` to connect to mongodb by requiring the file (or in this case a module) ```db.js``` inside the ```/config``` folder and passed the ```mongoose``` object.
 
+This is what our database configuration looks like.
 
 ~~~ javascript
 // '/config/db.js'
@@ -254,7 +254,7 @@ module.exports = router;
 {:.page-subheader}
 ### 3.c The models
 
-As you can see in ```/routes/blog.js```, we required the ```/models/blog```. So let's create our **blog schema**.
+As you can see in ```/routes/blog.js```, we required the ```../models/blog```. So let's create our **blog schema**.
 
 ~~~ javascript
 // '/models/blog.js'
@@ -291,8 +291,25 @@ module.exports = mongoose.model('Store', storeSchema);
 {:.page-subheader}
 ### 3.d The views
 
+Let's create a very simple view for the sake of having a complete express application. So in the views folder let's create 2 folders, ```blogs``` and ```stores```, and each directory will have an ```index.jade``` file. 
 
+{:.mb0}
+Our **blog** template at ```/views/blogs/index.jade```.
 
+~~~ html
+h1
+	| Welcome to my blog
+~~~
+
+{:.mb0}
+Our **store** template at  ```/views/stores/index.jade```.
+
+~~~ html
+h1
+	| Welcome to my store
+~~~
+
+Yes, our template's code are simple and clean. That's ```jade``` syntax for you, you can learn more about jade syntax in their [website](http://jade-lang.com/){:target="new"}
 
 {:.page-subheader}
 ### 3.e Start our expressjs application
@@ -311,4 +328,7 @@ Now go to your terminal, make sure that ```mongod``` is active, and run ```node 
 
 
 ## Done!
-This is not the only way of organizing your express application but this works for me and it's simply well organized. There's also an ```express generator``` which was reserved for another post. 
+This is not the only way of organizing your express application but this works for me and it's simply well organized. There's also an ```express generator``` which was reserved for another post. Thank you for reading.
+
+{:.text-center.panel.panel-default.padTB20}
+[Check the code on Github](https://github.com/codingpajamas/orgpress){:.btn.btn-primary.btn-lg}{:target="new"}
