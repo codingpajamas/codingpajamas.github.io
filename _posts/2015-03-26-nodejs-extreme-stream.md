@@ -4,7 +4,7 @@ title: "Nodejs Stream, The Basic"
 date: 2015-03-26
 tags: [angularjs]
 image: /images/pimg/nodejs.png
-status: published
+status: draft
 --- 
 
 ## Introduction
