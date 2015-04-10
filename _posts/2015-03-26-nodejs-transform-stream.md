@@ -9,7 +9,7 @@ status: published
 
 
 {:.text-center.panel.panel-default.padTB20}
-[Check full code](#the-full-code){:.btn.btn-primary.btn-lg.padLR30}
+[Check full code](#the-full-code){:.btn.btn-primary.btn-lg.padLR30} [Check the Code on Github](https://github.com/codingpajamas/Nodejs-Stream-Transform){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"}
 
 ## Introduction
  
