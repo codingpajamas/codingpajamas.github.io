@@ -22,7 +22,7 @@ Consider the following data:
 Now if you sort that by **item** field :
 
 ~~~javascript
-Item.find().sort({item:1})
+db.items.find().sort({item:1})
 ~~~
 
 {:.mb0}
@@ -49,7 +49,7 @@ You can add an extra field in your collection and store a lowercase version of t
 ~~~
 
 {:.mb0}
-Now if you sort that by **item** field, you'll get :
+Now if you sort that by **lowertitle** field, you'll get :
 
 ~~~javascript
 '100 Tomatoes'
@@ -58,7 +58,7 @@ Now if you sort that by **item** field, you'll get :
 'Orange
 ~~~
 
-But what if you have other fields that you want to search (ex. firstname, lastname, state, country), this would still sucks because you need to add many fake fields just for the purpose of sorting.
+But what if you want to sort with other fields (ex. firstname, lastname, state, country), this would still sucks because you need to add many fake fields just for the purpose of sorting.
 
 ###Solution 2 : MongoDB Agrregation Framework
 
