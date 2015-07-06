@@ -7,13 +7,15 @@ image: /images/pimg/ng.png
 status: published
 --- 
 
+{:.text-center.panel.panel-default.padTB20}
+[Check the Code on Github](https://github.com/codingpajamas/ngproto){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"}
+
 ## Introduction
 
 {:.alert.alert-info}
-**TLDR:** using **[http-server](https://github.com/typicode/json-server)** for web-service and **[json-server](https://github.com/typicode/json-server)** as a mongodb replacement will speedup your prototyping of angularjs application.
+**TLDR:** using **[http-server](https://github.com/typicode/json-server){:target="new"}** for web-service and **[json-server](https://github.com/typicode/json-server){:target="new"}** as a mongodb replacement will speedup your prototyping of angularjs application.
 
 Building an angularjs prototype can be hard, actually it's like you're already creating the whole app. You need to setup mongodb to store your data and then setup expressjs to create a restfull API, sometimes you don't need this setup but most of the time you need the CRUD functionality while prototyping.
-
 
 
 ## Setup
@@ -108,7 +110,7 @@ Now open your browser and visit ```http://localhost:3000/contacts``` to view all
 
 To view a task with specific ```id```, just add ```/id_number``` in the url like ```http://localhost:3000/contacts/1```
 
-Now we have a REST api. [You can learn more about json-server here](https://github.com/typicode/json-server)
+Now we have a REST api. [You can learn more about json-server here](https://github.com/typicode/json-server){:target="new"}
 
 ## Creating our Angularjs Application
 
@@ -161,7 +163,7 @@ Let's start configuring our URLs. We'll create these pages inside our ```.config
 
 ```$routeProvider``` has a ```.when()``` method which adds a new route in the ```$route``` service. This method accepts 2 parameters, **path** and **route properties**. When **path** matches the current URL, it will assign the **route properties** to ```$route.current```. So in our config setup, when viewing our index page which is the ```'/'``` url, ```$routeProvider``` checks if ```'/'``` was declared and when matched it will assign the **route properties** to the current page. We will now in the scope of **listCtrl** and the content of our ```ng-view``` will be swapped with the value of ```templateUrl``` which happens to be **list.html**
 
-Learn more about [$routeProvider here](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider).
+Learn more about [$routeProvider here](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider){:target="new"}.
 
 ### REST Service - .factory()
 
@@ -178,7 +180,7 @@ The ```ngResource``` module is not part of angular's core. It's in a separate fi
 
 That's it!!! We wrapped ```$resource``` in a **factory** service so we can reuse it inside of our controllers later.
 
-Learn more about [$resource here](https://docs.angularjs.org/api/ngResource/service/$resource).
+Learn more about [$resource here](https://docs.angularjs.org/api/ngResource/service/$resource){:target="new"}.
 
 
 ## The Basic Angular CRUD
@@ -375,3 +377,6 @@ Inside our ```listCtrl``` controller. Add a new function called ```deleteContact
 This is supposed to be a short post about ```json-server``` and ```http-server``` but I ended up writing about the application code too. We setup **http-server** so we can easily work on our application routes. Then we setup **json-server** as a database so that we can perform REST functionalities without the complicated process of mongodb. We also discussed about ```$resource``` service and how to use its ```query```, ```get```, ```delete```, and ```$save``` methods. We configured routing in ```config``` part and then create the declared controllers.
 
 I hope this article will help you in your next projects and thank you for reading. 
+
+{:.text-center.panel.panel-default.padTB20}
+[Check the Code on Github](https://github.com/codingpajamas/ngproto){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"}
