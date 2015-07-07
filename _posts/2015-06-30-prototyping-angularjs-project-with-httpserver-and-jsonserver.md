@@ -4,7 +4,7 @@ title: "Prototyping Angularjs Project with http-server and json-server"
 date: 2015-06-30
 tags: [angularjs]
 image: /images/pimg/ng.png
-status: draft
+status: published
 --- 
 
 {:.text-center.panel.panel-default.padTB20}
