@@ -127,9 +127,9 @@ angular.module('contactApp', ['ngRoute', 'ngResource'])
  
 You may have done it in a different way but I like to start my angularjs code this way. First instantiate my application name with ```angular.module``` together with the dependency modules. Then setup the **urls** in ```config()```, followed by creating the restful functionality in ```factory()``` service, and then create the **controllers**.
 
-### URL Configuration - .config()
+### URL Configuration
 
-Let's start configuring our URLs. We'll create these pages inside our ```.config``` using angular's ```$routeProvider```:
+Let's start configuring our URLs. We'll create these pages inside our ```.config()``` using angular's ```$routeProvider```:
 
 - ```"/"``` page to display all our contacts
 - ```"/add"``` page to display the form for adding new contact
@@ -165,9 +165,9 @@ Let's start configuring our URLs. We'll create these pages inside our ```.config
 
 Learn more about [$routeProvider here](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider){:target="new"}.
 
-### REST Service - .factory()
+### REST Service
 
-For the basic CRUD (create, read, update, delete) functionality, I'll be using angularjs' service with ```$resource```. 
+For the basic CRUD (create, read, update, delete) functionality, I'll be using angularjs' ```$resource```. 
 
 {:.alert.alert-warning}
 The ```ngResource``` module is not part of angular's core. It's in a separate file that you need to download and include in your html.
@@ -178,7 +178,7 @@ The ```ngResource``` module is not part of angular's core. It's in a separate fi
 }])
 ~~~
 
-That's it!!! We wrapped ```$resource``` in a **factory** service so we can reuse it inside of our controllers later.
+That's it!!! We wrapped ```$resource``` in a **factory** provider so we can reuse it inside of our controllers later.
 
 Learn more about [$resource here](https://docs.angularjs.org/api/ngResource/service/$resource){:target="new"}.
 
@@ -260,7 +260,7 @@ Upon submitting the form, we will call the ```addContact()``` function inside ou
 })
 ~~~
 
-In our **addCtrl**, we use the ```.save()``` method of resource service to send a POST request to the server together with the data of our new contact. In REST, since we send a POST without an ID, the server knows we're tying to add a new item. When saving was done, we redirect the user to index page with ```$location```.
+In our **addCtrl** controller, we use the ```.save()``` method of resource to send a POST request to the server together with the data of our new contact. In REST pattern, since we send a POST without an ID, the server knows we're tying to add a new item. When saving was done, we redirect the user to index page with ```$location```.
 
 ### Viewing a Single Contact
 
@@ -300,11 +300,11 @@ For the controller of this page, let's create a new controller called ```detailC
 })
 ~~~
 
-We use ```$routeParams``` in our controller to access the URL parameter. The url is ```/1``` and we get the contact's **id** from the url using ```$routeParams.contactid```. The ```.contactid``` is now the ```:contactid``` param name that we declared when we configured our **routes** in ```.config()```.
+We use ```$routeParams``` in our controller to access the URL parameter. The url is ```/1``` and we get the contact's **id** from the url using ```$routeParams.contactid```.  The ```.contactid``` is now the ```:contactid``` param name that we declared when we configured our **routes** in ```.config()```. Then we passed that **id** in our ```ContactData```'s ```.get()``` method.
 
 ### Editing Contact
 
-Open ```partials/edit.html``` and add the edit form code. It's just the same form as the **add.html** only edit form has pre-populated inputs using ```ng-model```.
+Open ```partials/edit.html``` and add the **edit form** code. It's just the same form as the add.html except **edit form** has pre-populated inputs using ```ng-model```.
 
 ~~~html
 <h3 class="clearfix">
@@ -352,7 +352,7 @@ When the form submits, it will call ```editContact()``` method in the assign con
 })
 ~~~
 
-First, we used ```$routeParams``` to get the **id** of contact to be edited. Then we passed that **id** in ```ContactData``` service to get the contact's informations and assign the returned value in ```$scope.contact``` variable. If you noticed, we assigned the ```ContactData``` service in a variable named ```objContact```. This will allows us to easily update the resource later.
+First, we use ```$routeParams``` to get the **id** of contact to be edited. Then we pass that **id** in ```ContactData``` service to get the contact's informations and assign the returned value in ```$scope.contact``` variable. If you noticed, we assigned the ```ContactData``` service in a variable named ```objContact```. This will allows us to easily update the resource later.
 
 So when we submit the form, we get the **name** and **number** value in the **edit form** and assign them in **name** and **number** properties of ```objContact```. Then we ussed ```.$save()``` to update the resource and redirect the user to index when update was done.
 
