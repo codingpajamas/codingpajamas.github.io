@@ -114,7 +114,7 @@ Now we have a REST api. [You can learn more about json-server here](https://gith
 
 ## Creating our Angularjs Application
 
-So after all these setup, let's now build our angularjs application by writing some code in ```app.js``` . 
+So after all these setups, let’s build our angularjs application by writing some code in ```app.js```. 
 
 ~~~javascript
 'use strict';
@@ -125,11 +125,14 @@ angular.module('contactApp', ['ngRoute', 'ngResource'])
 	.controller()
 ~~~ 
  
-You may have done it in a different way but I like to start my angularjs code this way. First instantiate my application name with ```angular.module``` together with the dependency modules. Then setup the **urls** in ```config()```, followed by creating the restful functionality in ```factory()``` service, and then create the **controllers**.
+You may have done it in a different way like assigning ```angular.module``` in a variable and reference it everytime you create controllers or use other services but this is a simple project so it's ok, let's discuss about the best practices in the future post. First instantiate my application name with ```angular.module``` together with the dependency modules. Then setup the **urls** in ```config()```, followed by creating the restful functionality in ```factory()``` service, and then create the **controllers**.
 
 ### URL Configuration
 
 Let's start configuring our URLs. We'll create these pages inside our ```.config()``` using angular's ```$routeProvider```:
+
+{:.alert.alert-warning}
+The ```routeProvider``` is a provider from ```ngRoute``` module and it's not part of angular's core. It's in a separate file that you need to download and include in your html.
 
 - ```"/"``` page to display all our contacts
 - ```"/add"``` page to display the form for adding new contact
@@ -170,7 +173,7 @@ Learn more about [$routeProvider here](https://docs.angularjs.org/api/ngRoute/pr
 For the basic CRUD (create, read, update, delete) functionality, I'll be using angularjs' ```$resource```. 
 
 {:.alert.alert-warning}
-The ```ngResource``` module is not part of angular's core. It's in a separate file that you need to download and include in your html.
+The ```$resource``` is a service from ```ngResource``` module and it's not part of angular's core. It's in a separate file that you need to download and include in your html.
 
 ~~~javascript
 .factory('ContactData', ['$resource', function($resource){
