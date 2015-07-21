@@ -17,7 +17,7 @@ One way for controllers to communicate with each other is by using angularjs eve
 
 ## Passing Data from Parent Controller to Child Controller
 
-You use ``` $scope.$broadcast``` to pass a data from Parent controller to child controllers. ```$broadcast``` will fire an event donw the ```$scope```. Then use ```$scope.$on``` on the child controller that needs to listen for this event.
+You use ``` $scope.$broadcast``` to pass a data from Parent controller to child controllers. ```$broadcast``` will fire an event down the ```$scope```. Then use ```$scope.$on``` on the child controller to listen for this event.
 
 ~~~javascript 
 app.controller('ParentCtrl', function($scope) {
