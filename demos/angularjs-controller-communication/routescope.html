@@ -1,0 +1,139 @@
+---
+layout: demo
+title: Dynamically Add Input Using AngularJS
+---
+<div class="pad20">
+		<div class="row" ng-app="commApp">
+			<div class="col-xs-12 col-sm-8 col-sm-push-2 col-md-6 col-md-push-3">
+				<div class="pad20 bg-white shadow ng-scope" ng-controller="ParentCtrl">
+
+					<h3 class="mb20 clearfix">Parent Controller</h3>
+
+					<div class="input-group mb20">
+						<input type="text" class="form-control" ng-model="parentMessage" placeholder="Type a message to child controllers">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" ng-click="sendMessageToChilren()">Send to Children!</button>
+						</span>
+					</div>
+
+					<div class="bg-white shadow pad20 mb20">
+						<p>From child first : <b>{{firstToParentMessage}}</b></p>
+						<p>From child second : <b>{{secondToParentMessage}}</b></p>
+					</div>
+
+
+
+					<div class="pad20 mb20 alert alert-info">
+						<div ng-controller="ChildFirstCtrl" class="ng-scope">
+							<h3 class="clearfix">First Controller</h3>  
+							<div class="input-group">
+								<input type="text" class="form-control" ng-model="firstToParentMessage" placeholder="Type a message to Parent controllers">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" ng-click="firstMessageToParent()">Send to Parent!</button>
+								</span>
+							</div>
+							<div class="input-group mb20">
+								<input type="text" class="form-control" ng-model="firstToSecondMessage" placeholder="Type a message to second controllers">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" ng-click="firstMessageToSecond()">Send to Second!</button>
+								</span>
+							</div>
+							<p>Message from parent : <b>{{parentMsg}}</b></p>
+							<p>Message from second : <b>{{secondMsg}}</b></p>
+						</div>
+					</div>
+
+
+
+					<div class="pad20 alert alert-success">
+						<div ng-controller="ChildSecondCtrl" class="ng-scope">
+							<h3 class="clearfix">Second Controller</h3>  
+							<div class="input-group">
+								<input type="text" class="form-control" ng-model="secondToParentMessage" placeholder="Type a message to Parent controllers">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" ng-click="secondMessageToParent()">Send to Parent!</button>
+								</span>
+							</div>
+							<div class="input-group mb20">
+								<input type="text" class="form-control" ng-model="secondToFirstMessage" placeholder="Type a message to first controllers">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" ng-click="secondMessageToFirst()">Send to First!</button>
+								</span>
+							</div>
+							<p>Message from parent : <b>{{parentMsg}}</b></p>
+							<p>Message from first : <b>{{firstMsg}}</b></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('commApp', []);
+        
+        app.controller('ParentCtrl', function($scope) {
+
+        	// send a message to children
+        	$scope.sendMessageToChilren = function(){
+        		$scope.$broadcast('ParentData', $scope.parentMessage);
+        	}
+
+        	// listen to first child
+        	$scope.$on('firstToParentMessage', function(event, data){
+        		$scope.firstToParentMessage = data; 
+        	})
+
+        	// listen to second child
+        	$scope.$on('secondToParentMessage', function(event, data){
+        		$scope.secondToParentMessage = data; 
+        	})
+        }); 
+
+        app.controller('ChildFirstCtrl', function($scope, $rootScope) {  
+
+        	// send message to mama
+        	$scope.firstMessageToParent = function(){
+        		$scope.$emit('firstToParentMessage', $scope.firstToParentMessage);
+        	}
+
+        	// send message to second controller
+        	$scope.firstMessageToSecond = function(){
+        		$rootScope.$emit('firstToSecondMessage', $scope.firstToSecondMessage);
+        	}
+
+        	// listen to mama
+        	$scope.$on('ParentData', function(event, data){
+        		$scope.parentMsg = data; 
+        	})
+
+        	// listen to second controller
+        	$rootScope.$on('secondToFirstMessage', function(event, data){
+        		$scope.secondMsg = data; 
+        	})
+        }); 
+
+        app.controller('ChildSecondCtrl', function($scope, $rootScope) {
+
+        	// send message to mama
+        	$scope.secondMessageToParent = function(){
+        		$scope.$emit('secondToParentMessage', $scope.secondToParentMessage);
+        	}
+
+        	// send message to first
+        	$scope.secondMessageToFirst = function(){
+        		$rootScope.$emit('secondToFirstMessage', $scope.secondToFirstMessage);
+        	}
+
+        	// listen to mama
+        	$scope.$on('ParentData', function(event, data){
+        		$scope.parentMsg = data; 
+        	})
+
+        	// listen to first controller
+        	$rootScope.$on('firstToSecondMessage', function(event, data){
+        		$scope.firstMsg = data; 
+        	})
+        }); 
+	</script>
+	
