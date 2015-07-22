@@ -1,8 +1,23 @@
----
-layout: demo
-title: Dynamically Add Input Using AngularJS
----
-<div class="pad20">
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/misc.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<style type="text/css">
+		.input-group-btn button {
+			width: 150px;
+		}
+		.mb3 {
+			margin-bottom: 3px;
+		}
+	</style>
+	<script type="text/javascript" src="/js/angular.js"></script>
+</head>
+<body>
+	<div class="container" id="mainContent">   
 		<div class="row" ng-app="commApp">
 			<div class="col-xs-12 col-sm-8 col-sm-push-2 col-md-6 col-md-push-3">
 				<div class="pad20 bg-white shadow ng-scope" ng-controller="ParentCtrl">
@@ -26,7 +41,7 @@ title: Dynamically Add Input Using AngularJS
 					<div class="pad20 mb20 alert alert-info">
 						<div ng-controller="ChildFirstCtrl" class="ng-scope">
 							<h3 class="clearfix">First Controller</h3>  
-							<div class="input-group">
+							<div class="input-group mb3">
 								<input type="text" class="form-control" ng-model="firstToParentMessage" placeholder="Type a message to Parent controllers">
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" ng-click="firstMessageToParent()">Send to Parent!</button>
@@ -45,10 +60,10 @@ title: Dynamically Add Input Using AngularJS
 
 
 
-					<div class="pad20 alert alert-success">
+					<div class="pad20 alert alert-danger">
 						<div ng-controller="ChildSecondCtrl" class="ng-scope">
 							<h3 class="clearfix">Second Controller</h3>  
-							<div class="input-group">
+							<div class="input-group mb3">
 								<input type="text" class="form-control" ng-model="secondToParentMessage" placeholder="Type a message to Parent controllers">
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" ng-click="secondMessageToParent()">Send to Parent!</button>
@@ -66,8 +81,19 @@ title: Dynamically Add Input Using AngularJS
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		</div> 
+	</div> 
+    <p id="demoLinks" class="text-center">
+		<a href="/" class="btn btn-danger" target="new">
+			<i class="glyphicon glyphicon-home"></i>
+		</a>
+		<a href="https://github.com/codingpajamas/" class="btn btn-danger" target="new">
+			<i class="fa fa-github"></i>
+		</a>
+		<a href="https://twitter.com/angMalakas" class="btn btn-danger" target="new">
+			<i class="fa fa-twitter "></i>
+		</a>
+    </p>
 
 	<script type="text/javascript">
 		var app = angular.module('commApp', []);
@@ -136,4 +162,17 @@ title: Dynamically Add Input Using AngularJS
         	})
         }); 
 	</script>
-	
+
+	<script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-60357604-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+
+</body>
+</html>

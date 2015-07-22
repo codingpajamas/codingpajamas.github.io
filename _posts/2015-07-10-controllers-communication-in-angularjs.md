@@ -9,7 +9,8 @@ status: published
 
 
 {:.text-center.panel.panel-default.padTB20}
-[Check the Code on Github](https://github.com/codingpajamas/ngcontrollercommunication){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"}
+[Check Demo](/demos/angularjs-controller-communication/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="_new"}
+[Check the Code on Github](https://github.com/codingpajamas/ngcontrollercommunication){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="_new"}
 
 ## Introduction
 
@@ -74,10 +75,5 @@ So if ```$emit``` fires event up, why did we use it in ```$rootScope``` which is
 
 
 {:.text-center.panel.panel-default.padTB20}
-[Check the Code on Github](https://github.com/codingpajamas/ngcontrollercommunication){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"}
-
-
- 
-
-
-
+[Check Demo](/demos/angularjs-controller-communication/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="_new"}
+[Check the Code on Github](https://github.com/codingpajamas/ngcontrollercommunication){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="_new"}
