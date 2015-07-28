@@ -3,7 +3,7 @@ layout: post
 title: "Controllers Communication in Angularjs"
 date: 2015-07-10
 tags: [angularjs]
-image: /images/pimg/ng.png
+image: /images/post/post-7.png
 status: published
 --- 
 

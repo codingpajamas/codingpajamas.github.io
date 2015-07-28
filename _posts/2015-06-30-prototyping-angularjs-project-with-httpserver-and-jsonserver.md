@@ -2,7 +2,7 @@
 layout: post
 title: "Prototyping Angularjs Project with http-server and json-server"
 date: 2015-06-30
-tags: [angularjs]
+tags: [angularjs, nodejs]
 image: /images/pimg/ng.png
 status: published
 --- 
