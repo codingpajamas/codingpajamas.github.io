@@ -36,7 +36,7 @@ routes_onerror = [
 
 What the code above does is to map any invalid urls to your 404 application page. Now you don't have to worry about invalid application or controller or function errors because they will be handled gracefully. 
 
-{:.text-center.panel.panel-danger.padTB20}
+{:.text-center.alert.alert-danger.padTB20}
 Beware of the syntax error you have because they will be hidden by your beautiful 404 page, so make sure you disable this in your dev/staging environment.
 
 I hope this helps and thank you reading.
