@@ -10,7 +10,7 @@ status: published
 ## Introduction
 **Web2py** is an apllication framework for **python**. Creating a web2py project is so easy. Unfortunately, creating a **404 page** is not so obvious for a first-time user like me. Even after reading the [docs](http://web2py.com/book/default/chapter/04#Routes-on-error){:target="_new"} and searching the internet for hours, I can't figure out how.
 
-So after trying/combining/testing a lot of suggestions from stackoverflow, I have finally had my 404 page.
+So after trying/combining/testing a lot of suggestions from stackoverflow, I have my 404 page.
 
 ## The Problem
 My web2py installation has more than 5 applications and I need a single 404 page to serve whenever something not nice happen, regardless of what application has failed.
