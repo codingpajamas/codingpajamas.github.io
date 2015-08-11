@@ -38,7 +38,7 @@ body {
 }
 .post-entry, .post-page {
 	background: #fff;
-	box-shadow: 0 0 1px #ccc;
+	box-shadow: 0 0 2px #aaa;
 	margin-bottom: 30px;
 	border: 1px solid #fff;
 }

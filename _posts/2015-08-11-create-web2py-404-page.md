@@ -23,7 +23,13 @@ First, create a new application called 404. Why? So you can display it by using 
 ### The routes.py
 Now create a routes.py in the root folder of web2py to re-route any error request on the server.
 
+{:.text-center}
+![npminit](/images/post/post-8-2.png)
+
+Open routes.py and add the followong code.
+
 ~~~python
+#content of routes.py
 routes_onerror = [
   ('app1/400', '/404'),
   ('app1/*', '/404'),
