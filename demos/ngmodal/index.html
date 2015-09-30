@@ -1,0 +1,35 @@
+---
+layout: demo
+title: Adding Bootstrap Modal To Angularjs Application
+---
+	
+	<div ng-app="modalApp">
+		<div class="container" ng-controller="PageCtrl">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-sm-push-3">
+					<ul class="list-group">
+						<li class="list-group-item" ng-repeat="name in testnames">
+							This is a name
+							<a class="badge" ng-click="openNameInfo(name)">view</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('contactsApp', []);
+        app.controller('CreateContactCtrl', function($scope) {
+            $scope.contacts = [{type: 'text'}];
+
+            $scope.addContactField = function(){
+                $scope.contacts.push({type: 'text'});  
+            };
+
+            $scope.removeContactField = function(index){ 
+                $scope.contacts.splice( index, 1 );
+            };
+        }); 
+	</script>
+ 
