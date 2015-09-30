@@ -4,7 +4,7 @@ title: "Adding Bootstrap Modal To Angularjs Application"
 date: 2015-09-26
 tags: [angularjs]
 image: /images/pimg/ng.png
-status: published
+status: draft
 --- 
 
 ## Introduction
