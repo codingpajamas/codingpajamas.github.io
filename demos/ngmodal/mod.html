@@ -10,9 +10,9 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-sm-push-3">
 				<ul class="list-group">
-					<li class="list-group-item" ng-repeat="name in testnames">
-						This is a name
-						<a class="badge" ng-click="openNameInfo(name)">view</a>
+					<li class="list-group-item" ng-repeat="person in persons">
+						{{person.name}}
+						<a class="badge" ng-click="openNameInfo(person)">view</a>
 					</li>
 				</ul>
 			</div>

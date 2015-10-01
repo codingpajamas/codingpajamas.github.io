@@ -3,14 +3,14 @@ layout: demo
 title: Adding Bootstrap Modal To Angularjs Application
 ---
 	
-	<div ng-app="modalApp">
-		<div class="container" ng-controller="PageCtrl">
+	<div ng-app="personApp">
+		<div class="container" ng-controller="PersonCtrl">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-sm-push-3">
 					<ul class="list-group">
-						<li class="list-group-item" ng-repeat="name in testnames">
-							This is a name
-							<a class="badge" ng-click="openNameInfo(name)">view</a>
+						<li class="list-group-item" ng-repeat="person in persons">
+							Test Name
+							<a class="badge" ng-click="openNameInfo(person)">view</a>
 						</li>
 					</ul>
 				</div>
@@ -18,18 +18,36 @@ title: Adding Bootstrap Modal To Angularjs Application
 		</div>
 	</div>
 
+	<script src="js/ui-bootstrap-tpls-0.13.4.js"></script>
+
 	<script type="text/javascript">
-		var app = angular.module('contactsApp', []);
-        app.controller('CreateContactCtrl', function($scope) {
-            $scope.contacts = [{type: 'text'}];
+		angular.module('personApp', ['ui.bootstrap'])
+		.controller('PersonCtrl', function($scope, $modal){
+			$scope.persons = [
+				{id:1, "name":"Test1 Name1", "email":"test1@name.com"},
+				{id:1, "name":"Test2 Name2", "email":"test2@name.com"},
+				{id:1, "name":"Test3 Name3", "email":"test3@name.com"},
+				{id:1, "name":"Test4 Name4", "email":"test4@name.com"},
+				{id:1, "name":"Test5 Name5", "email":"test5@name.com"}
+			];
 
-            $scope.addContactField = function(){
-                $scope.contacts.push({type: 'text'});  
-            };
-
-            $scope.removeContactField = function(index){ 
-                $scope.contacts.splice( index, 1 );
-            };
-        }); 
+			$scope.openNameInfo = function(person){
+				$modal.open({
+					templateUrl: 'partials/namemodal.html',
+					controller: 'ModalController',
+					resolve: {
+						selectedPerson: function () {
+						  return person;
+						}
+					}
+				}); 
+			}
+		})
+		.controller('ModalController', function($scope, $modalInstance, selectedPerson){
+			$scope.person = selectedPerson;
+			$scope.modalClose = function(){
+				$modalInstance.dismiss('cancel');
+			}
+		})
 	</script>
  
