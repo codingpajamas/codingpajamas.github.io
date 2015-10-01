@@ -14,12 +14,12 @@ status: published
 [Check Demo](/demos/ngmodal/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"} [Check code on github](https://github.com/codingpajamas/ngModal){:.btn.btn-primary.btn-lg.padLR30}{:target="new"}
 
 ## Introduction
-Without a doubt, Bootstrap is one of the most popular framework but you can't just use its javascript goodness in angularjs applications. Fortunately, Angular guys created directives for Bootstrap components. So today let's create a basic application that uses "[UI Bootstrap's modal](http://angular-ui.github.io/bootstrap/){:target="new"}"
+Without a doubt, Bootstrap is one of the most popular framework but you can't just use its javascript goodness in angularjs applications. Fortunately, Angular guys created directives for Bootstrap components. So today let's create a basic application that uses **[UI Bootstrap's modal](http://angular-ui.github.io/bootstrap/){:target="new"}**
 
 We will create an application that displays a list of people. Each person on the list has a clickable badge that when clicked will open a modal displaying the other informations of that person. 
 
 ## HTML Setup
-It's basic html setup using bootstrap3 framework. We used the "list-group" component of bootstrap to display the people list. We also included the "angular.js" and "app.js" scripts. 
+It's basic html setup using bootstrap3 framework. We used the ```list-group``` component of bootstrap to display the people list. We also included the **angular.js** and **app.js** scripts. 
 
 ~~~html
 <html>
@@ -51,7 +51,7 @@ It's basic html setup using bootstrap3 framework. We used the "list-group" compo
 ~~~
 
 ## The Angular Application
-In "app.js" let's instantiate our app. Then create a controller called 'PersonCtrl' and create an array of people.
+In **app.js** let's instantiate our app. Then create a controller called ```PersonCtrl``` and create an array of people.
 
 ~~~javascript
 angular.module('personApp', [])
@@ -66,7 +66,7 @@ angular.module('personApp', [])
   })
 ~~~
 
-Then we'll go back to our index.html and setup the angularjs directives - "ng-app" and "ng-controller"
+Then we'll go back to our **index.html** and setup the angularjs directives - ```ng-app``` and ```ng-controller```.
 
 ~~~html
 <html ng-app="personApp">
@@ -75,7 +75,7 @@ Then we'll go back to our index.html and setup the angularjs directives - "ng-ap
   <div class="container" ng-controller="PersonCtrl">
 ~~~
 
-Then we will use "ng-repeat" to display our people array.
+Then we will use ```ng-repeat``` to display our people array.
 
 ~~~html 
 <li class="list-group-item" ng-repeat="person in persons"> 
@@ -85,7 +85,7 @@ Then we will use "ng-repeat" to display our people array.
 ~~~
 
 ## The UI Bootstrap Setup
-The UI Bootstrap doesn't  have any javascript dependencies except angularjs. Got to "[UI Bootstrap page](http://angular-ui.github.io/bootstrap/){:target="new"}", download and include the script in your html.
+The UI Bootstrap doesn't  have any javascript dependencies except angularjs. Go to **[UI Bootstrap page](http://angular-ui.github.io/bootstrap/){:target="new"}**, download and include the script in your html.
 
 ~~~html
 <script src="js/angular.min.js"></script> 
@@ -157,7 +157,7 @@ Now, lets create the modal controller.
 
 In the controller above, we we're able to inject ```selectedPerson``` because we passed that through the ```resolve```. Now we can access the clicked person's information (**selectedPerson**). We also create a function to close the modal using the ```.dismiss()``` method of the injected ```$modalInstance```.
 
-And lastly, let's create the template required by our **modal** instance. It's just a very basic bootstrap modal with ```modal-header```, ```modal-body```, and ```modal-footer```. We will display the person's information in the **modal body**. And at the **modal footer** is a button to close the modal.
+And lastly, let's create the template required by our **modal instance**. It's just a very basic bootstrap modal with ```modal-header```, ```modal-body```, and ```modal-footer```. We will display the person's information in the **modal body**. And at the **modal footer** is a button to close the modal.
 
 ~~~html
 <div class="modal-header">
