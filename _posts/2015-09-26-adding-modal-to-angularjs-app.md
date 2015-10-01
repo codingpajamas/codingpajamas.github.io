@@ -3,7 +3,7 @@ layout: post
 title: "Adding Bootstrap Modal To Angularjs Application"
 date: 2015-09-26
 tags: [angularjs]
-image: /images/pimg/ng.png
+image: /images/post/post-9-1.png
 status: published
 --- 
 

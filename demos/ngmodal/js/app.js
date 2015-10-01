@@ -3,17 +3,18 @@
 angular.module('ngmodal', ['ui.bootstrap'])
 	.controller('PageCtrl', function($scope, $modal){
 		$scope.persons = [
-							{id:1, "name":"Test1 Name1", "email":"test1@name.com"},
-							{id:1, "name":"Test2 Name2", "email":"test2@name.com"},
-							{id:1, "name":"Test3 Name3", "email":"test3@name.com"},
-							{id:1, "name":"Test4 Name4", "email":"test4@name.com"},
-							{id:1, "name":"Test5 Name5", "email":"test5@name.com"}
+							{id:1, "name":"FirstName1 Name1", "email":"FirstName1@name.com"},
+							{id:1, "name":"FirstName2 Name2", "email":"FirstName2@name.com"},
+							{id:1, "name":"FirstName3 Name3", "email":"FirstName3@name.com"},
+							{id:1, "name":"FirstName4 Name4", "email":"FirstName4@name.com"},
+							{id:1, "name":"FirstName5 Name5", "email":"FirstName5@name.com"}
 						];
 
 		$scope.openNameInfo = function(person){
 			var nameModalInstance = $modal.open({
 				templateUrl: 'partials/namemodal.html',
 				controller: 'ModalController',
+				size: 'sm',
 				resolve: {
 					selectedPerson: function () {
 					  return person;
