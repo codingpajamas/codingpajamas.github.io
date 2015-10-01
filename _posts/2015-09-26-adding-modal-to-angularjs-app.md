@@ -7,6 +7,12 @@ image: /images/pimg/ng.png
 status: published
 --- 
 
+
+
+
+{:.text-center.panel.panel-default.padTB20}
+[Check Demo](/demos/ngmodal/){:.btn.btn-primary.btn-lg.padLR30.mr20}{:target="new"} [Check code on github](https://github.com/codingpajamas/ngModal){:.btn.btn-primary.btn-lg.padLR30}{:target="new"}
+
 ## Introduction
 Without a doubt, Bootstrap is one of the most popular framework but you can't just use its javascript goodness in angularjs applications. Fortunately, Angular guys created directives for Bootstrap components. So today let's create a basic application that uses "[UI Bootstrap's modal](http://angular-ui.github.io/bootstrap/){:target="new"}"
 
