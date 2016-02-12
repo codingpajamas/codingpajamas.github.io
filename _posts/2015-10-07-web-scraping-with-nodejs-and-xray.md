@@ -36,7 +36,7 @@ As it was written on [xray's github page](https://github.com/lapwinglabs/x-ray#x
 The syntax:
 
 ~~~javascript
-xray(url, selector)(function(err, obj){ })
+xray(url, selector)(callback)
 ~~~
 
 {:.mb0}
