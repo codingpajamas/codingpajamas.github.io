@@ -3,7 +3,7 @@ layout: post
 title: "How to dynamically add input on form using angularjs"
 date: 2015-03-06
 tags: [angularjs]
-image: /images/pimg/ng.png
+image: /images/post/post-2.png
 status: published
 --- 
 {:.text-center.panel.panel-default.padTB20}
