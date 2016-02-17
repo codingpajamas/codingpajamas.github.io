@@ -9,7 +9,7 @@ status: published
 
 ## Use Case
 
-SO let's say when a customer order on your ecommerce site. You save his email on your database and send him an email too about his order information including a "cancel" link. In the cancel link structure, you added the orderid and encrypted email so you can decrypt and use those info later to verify in the database.
+Let's say a customer ordered on your ecommerce site. You save his email on your database and send him an email too about his order information including a "cancel" link. In the cancel link structure, you added the orderid and encrypted email so you can decrypt and use those info later to verify in the database.
 
 ~~~javascript
 // example cancel link
