@@ -19,8 +19,16 @@ app.service('Data', function($http, $q){
 });
 
 app.controller('MainCtrl', ['$scope', 'Data', function($scope, Data){
-	
+	$scope.resultData = [];
+	$scope.superData = [];
+	$scope.superKeys = [];
+
 	Data.get().then(function(data){
-		console.log(data)
-	}) 
+		$scope.superData = data.superdata; 
+		$scope.superKeys = _.keys(_.head($scope.superData)); 
+		
+		
+	});
+
+
 }]);

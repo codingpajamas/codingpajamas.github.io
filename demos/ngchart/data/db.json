@@ -405,7 +405,7 @@
       ]
     }
   ],
-  "training_status": [
+  "activity_status": [
     {
       "id": 0,
       "status": "in progress",
@@ -510,6 +510,98 @@
       "activityid": 14,
       "userid": 2,
       "storeid": 14
+    }
+  ],
+  "superdata": [
+    {
+      "status": "in progress",
+      "activity": "adipisicing cillum et",
+      "name": "Alison Bowen",
+      "store": "Valreda"
+    },
+    {
+      "status": "in progress",
+      "activity": "exercitation sunt veniam",
+      "name": "Zelma Wells",
+      "store": "Genekom"
+    },
+    {
+      "status": "in progress",
+      "activity": "culpa laboris irure",
+      "name": "Alison Bowen",
+      "store": "Geekwagon"
+    },
+    {
+      "status": "completed",
+      "activity": "laborum irure sunt",
+      "name": "Alison Bowen",
+      "store": "Telequiet"
+    },
+    {
+      "status": "not started",
+      "activity": "nisi amet voluptate",
+      "name": "Zelma Wells",
+      "store": "Chorizon"
+    },
+    {
+      "status": "completed",
+      "activity": "id ea sit",
+      "name": "Mendez Ferrell",
+      "store": "Cubicide"
+    },
+    {
+      "status": "not started",
+      "activity": "qui incididunt est",
+      "name": "Neva Cooley",
+      "store": "Enomen"
+    },
+    {
+      "status": "in progress",
+      "activity": "magna sunt adipisicing",
+      "name": "Alison Bowen",
+      "store": "Emtrac"
+    },
+    {
+      "status": "not started",
+      "activity": "tempor aliqua esse",
+      "name": "Mendez Ferrell",
+      "store": "Isosphere"
+    },
+    {
+      "status": "in progress",
+      "activity": "nostrud nostrud velit",
+      "name": "Mendez Ferrell",
+      "store": "Cubicide"
+    },
+    {
+      "status": "completed",
+      "activity": "reprehenderit dolore pariatur",
+      "name": "Zelma Wells",
+      "store": "Chorizon"
+    },
+    {
+      "status": "in progress",
+      "activity": "proident pariatur ex",
+      "name": "Lara Young",
+      "store": "Buzzopia"
+    },
+    {
+      "status": "in progress",
+      "activity": "incididunt deserunt eiusmod",
+      "name": "Lara Young",
+      "store": "Buzzopia"
+    },
+    {
+      "status": "in progress",
+      "activity": "laboris dolore cupidatat",
+      "name": "Mendez Ferrell",
+      "store": "Isosphere"
+    },
+    {
+      "status": "completed",
+      "activity": "ipsum ipsum dolor",
+      "name": "Alison Bowen",
+      "store": "Progenex"
     }
   ]
 }

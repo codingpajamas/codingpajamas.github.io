@@ -9,10 +9,13 @@
 <body>
 	
 	<div ng-controller="MainCtrl">
-		
+		<ul>
+			<li ng-repeat="data in resultData">{{data.store}}</li>
+		</ul>
 	</div>
 
 	<script type="text/javascript" src="/js/angular.js"></script>
+	<script type="text/javascript" src="/js/lodash.js"></script>
 	<script type="text/javascript" src="app/app.js"></script>
 	
 </body>
