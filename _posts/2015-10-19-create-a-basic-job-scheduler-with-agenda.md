@@ -3,7 +3,7 @@ layout: post
 title: "Create a Basic Job Scheduler With Agenda"
 date: 2015-12-20
 tags: [nodejs]
-image: /images/pimg/nodejs.png
+image: /images/post/post-12.png
 status: published
 --- 
 
