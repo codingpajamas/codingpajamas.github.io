@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nodejs Transform Stream, Reading a File Line by Line"
-date: 2015-03-26
+date: 2015-04-26
 tags: [nodejs]
 image: /images/pimg/nodejs.png
 status: published
