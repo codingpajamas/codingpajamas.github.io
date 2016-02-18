@@ -53,4 +53,4 @@ In the above example, ```done()``` was called after performing the update operat
 
 ## Conclusion
 
-```Agenda``` is perfectly fine for scheduling simple periodic task. But if your application needs more robust scheduling solution (for example you need a separate task server), I would really recommend you to check [kue](https://github.com/Automattic/kue)
+```Agenda``` is perfectly fine for scheduling simple periodic task. Read the [documentation](https://github.com/rschmukler/agenda#full-documentation) to learn more options like multiple jobs, job queue, managing failed jobs and more. But if your application needs more robust scheduling solution (for example you need a separate task server), I would really recommend you to check [kue](https://github.com/Automattic/kue)
