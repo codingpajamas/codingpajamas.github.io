@@ -2,16 +2,16 @@
 layout: post
 title: "Create a Basic Job Scheduler With Agenda"
 date: 2015-12-20
-tags: [uncategorized]
+tags: [nodejs]
 image: /images/pimg/nodejs.png
-status: draft
+status: published
 --- 
 
 ## Introduction 
 
-I'm adding a functionality to an online store that need to check an 'order' if it's 24 hours old and update its status from 'new' to 'abandoned'. 
+I'm adding a functionality to an online store that need to check the **orders** if it's 24 hours old and update its status from 'new' to 'abandoned'. This checking task needs to run every 24 hours.
 
-I used (Agenda)[https://github.com/rschmukler/agenda] for schedule this functionality. 
+I used [Agenda](https://github.com/rschmukler/agenda) for this basic functionality because it is lightweight, easy to use, and doesn't require me to install another program in my application stack.
 
 
 
@@ -47,4 +47,10 @@ agenda.start();
 
 ~~~
 
-Using agenda is very easy, you just have to 
+Using agenda is very easy, you just have to define the job and set the interval. And lastly, call ```start()``` method to actually start the scheduler. 
+
+In the above example, ```done()``` was called after performing the update operation. 
+
+## Conclusion
+
+```Agenda``` is perfectly fine for scheduling simple periodic task. But if your application needs more robust scheduling solution (for example you need a separate task server), I would really recommend you to check [kue](https://github.com/Automattic/kue)
