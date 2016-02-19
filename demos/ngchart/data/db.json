@@ -405,7 +405,7 @@
       ]
     }
   ],
-  "activity_status": [
+  "status": [
     {
       "id": 0,
       "status": "in progress",
