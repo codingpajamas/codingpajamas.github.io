@@ -14,6 +14,8 @@ status: published
 
 ## Introduction
 
+You might be thinking this is another angular service blog post, no. That might be an option for controller communication specially when dealing with data from a server but we will see a different option today.
+
 One way for controllers to communicate with each other is by using angularjs event system. Create an event and fire it up, then create a listener to this event somewhere in other controllers. It's sort of pub/sub system, publish an event and some controllers were subscribed to that event.
 
 ## Passing Data from Parent Controller to Child Controller

@@ -42,13 +42,13 @@
 						<div ng-controller="ChildFirstCtrl" class="ng-scope">
 							<h3 class="clearfix">First Controller</h3>  
 							<div class="input-group mb3">
-								<input type="text" class="form-control" ng-model="firstToParentMessage" placeholder="Type a message to Parent controllers">
+								<input type="text" class="form-control" ng-model="firstToParentMessage" placeholder="Type a message to Parent controller">
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" ng-click="firstMessageToParent()">Send to Parent!</button>
 								</span>
 							</div>
 							<div class="input-group mb20">
-								<input type="text" class="form-control" ng-model="firstToSecondMessage" placeholder="Type a message to second controllers">
+								<input type="text" class="form-control" ng-model="firstToSecondMessage" placeholder="Type a message to second controller">
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" ng-click="firstMessageToSecond()">Send to Second!</button>
 								</span>
@@ -60,17 +60,17 @@
 
 
 
-					<div class="pad20 alert alert-danger">
+					<div class="pad20 alert alert-success">
 						<div ng-controller="ChildSecondCtrl" class="ng-scope">
 							<h3 class="clearfix">Second Controller</h3>  
 							<div class="input-group mb3">
-								<input type="text" class="form-control" ng-model="secondToParentMessage" placeholder="Type a message to Parent controllers">
+								<input type="text" class="form-control" ng-model="secondToParentMessage" placeholder="Type a message to Parent controller">
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" ng-click="secondMessageToParent()">Send to Parent!</button>
 								</span>
 							</div>
 							<div class="input-group mb20">
-								<input type="text" class="form-control" ng-model="secondToFirstMessage" placeholder="Type a message to first controllers">
+								<input type="text" class="form-control" ng-model="secondToFirstMessage" placeholder="Type a message to first controller">
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" ng-click="secondMessageToFirst()">Send to First!</button>
 								</span>
