@@ -246,7 +246,7 @@ d3.csv("data/population.csv", function(err, data) {
         .on("mouseout", function() {
                 $(this).attr("fill-opacity", "1.0");
                 $("#tooltip-container").hide();
-            });
+            });    
     
     g.append("path")
         .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
