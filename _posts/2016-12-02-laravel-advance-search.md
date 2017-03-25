@@ -11,7 +11,7 @@ Every backend application requires a functionality to search data on each module
 
 We can create advance search in many ways, unfortunately a lot of example and tutorials online has chosen the wrong path - even our devs.
 
-### The Wrong Approach
+### The Wrong Approaches
 I've seen others used the ```Model::when``` method and others are using ```if/else``` inside of a ```where``` closure.
 
 {:.mb0}
@@ -29,10 +29,10 @@ if($arrActions){
 $histories->get();
 ~~~
 
-While all of the methods above gets the job done, it's not the best approach - not clean, not reusable, not cool.
+While all of the above gets the job done, it's not the best approach - not clean, not reusable, not cool.
 
 
-### The Better Solution
+### A Better Solution
 The best solution would be using the ```eloquent's local scope```. It allows you to add a method in the model where you can perform the filtering. It's reusable in every instance of that ```Model``` - and even accessible in ```eager loading``` relationship.
 
 {:.mb0}
