@@ -11,6 +11,7 @@ Every backend application requires a functionality to search data on each module
 
 We can create advance search in many ways, unfortunately a lot of example and tutorials online has chosen the wrong path - even our devs.
 
+### The Wrong Approach
 I've seen others used the ```Model::when``` method and others are using ```if/else``` inside of a ```where``` closure.
 
 {:.mb0}
@@ -31,7 +32,7 @@ $histories->get();
 While all of the methods above gets the job done, it's not the best approach - not clean, not reusable, not cool.
 
 
-### The Solution
+### The Better Solution
 The best solution would be using the ```eloquent's local scope```. It allows you to add a method in the model where you can perform the filtering. It's reusable in every instance of that ```Model``` - and even accessible in ```eager loading``` relationship.
 
 {:.mb0}
@@ -89,4 +90,4 @@ $products = Product::orderBy('price', 'desc')
  
 Now we can filter **products** in any controller easily, whether you're displaying filtered products in the Admin panel or a sidebar widget displaying a dynamic "top 10 products" based on the current category page. 
 
-Be sure to read the official [documentation of ```Local Scopes``` in the Laravel website](https://laravel.com/docs/5.2/eloquent#local-scopes){:target="new"}.
+Thanks for reading and be sure to check the official [documentation of ```Local Scopes``` in the Laravel website](https://laravel.com/docs/5.2/eloquent#local-scopes){:target="new"}.
