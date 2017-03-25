@@ -1,0 +1,793 @@
+[{
+	"name": "China",
+	"users": "641,601,070",
+	"population": "1,393,783,836"
+}, {
+	"name": "United States",
+	"users": "279,834,232",
+	"population": "322,583,006"
+}, {
+	"name": "India",
+	"users": "243,198,922",
+	"population": "1,267,401,849"
+}, {
+	"name": "Japan",
+	"users": "109,252,912",
+	"population": "126,999,808"
+}, {
+	"name": "Brazil",
+	"users": "107,822,831",
+	"population": "202,033,670"
+}, {
+	"name": "Russia",
+	"users": "84,437,793",
+	"population": "142,467,651"
+}, {
+	"name": "Germany",
+	"users": "71,727,551",
+	"population": "82,652,256"
+}, {
+	"name": "Nigeria",
+	"users": "67,101,452",
+	"population": "178,516,904"
+}, {
+	"name": "United Kingdom",
+	"users": "57,075,826",
+	"population": "63,489,234"
+}, {
+	"name": "France",
+	"users": "55,429,382",
+	"population": "64,641,279"
+}, {
+	"name": "Mexico",
+	"users": "50,923,060",
+	"population": "123,799,215"
+}, {
+	"name": "South Korea",
+	"users": "45,314,248",
+	"population": "49,512,026"
+}, {
+	"name": "Indonesia",
+	"users": "42,258,824",
+	"population": "252,812,245"
+}, {
+	"name": "Egypt",
+	"users": "40,311,562",
+	"population": "83,386,739"
+}, {
+	"name": "Viet Nam",
+	"users": "39,772,424",
+	"population": "92,547,959"
+}, {
+	"name": "Philippines",
+	"users": "39,470,845",
+	"population": "100,096,496"
+}, {
+	"name": "Italy",
+	"users": "36,593,969",
+	"population": "61,070,224"
+}, {
+	"name": "Turkey",
+	"users": "35,358,888",
+	"population": "75,837,020"
+}, {
+	"name": "Spain",
+	"users": "35,010,273",
+	"population": "47,066,402"
+}, {
+	"name": "Canada",
+	"users": "33,000,381",
+	"population": "35,524,732"
+}, {
+	"name": "Poland",
+	"users": "25,666,238",
+	"population": "38,220,543"
+}, {
+	"name": "Colombia",
+	"users": "25,660,725",
+	"population": "48,929,706"
+}, {
+	"name": "Argentina",
+	"users": "24,973,660",
+	"population": "41,803,125"
+}, {
+	"name": "South Africa",
+	"users": "24,909,854",
+	"population": "53,139,528"
+}, {
+	"name": "Iran",
+	"users": "22,200,708",
+	"population": "78,470,222"
+}, {
+	"name": "Australia",
+	"users": "21,176,595",
+	"population": "23,630,169"
+}, {
+	"name": "Morocco",
+	"users": "20,207,154",
+	"population": "33,492,909"
+}, {
+	"name": "Pakistan",
+	"users": "20,073,929",
+	"population": "185,132,926"
+}, {
+	"name": "Thailand",
+	"users": "19,386,154",
+	"population": "67,222,972"
+}, {
+	"name": "Saudi Arabia",
+	"users": "17,397,179",
+	"population": "29,369,428"
+}, {
+	"name": "Madagascar",
+	"users": "17,321,756",
+	"population": "23,571,962"
+}, {
+	"name": "Ukraine",
+	"users": "16,849,008",
+	"population": "44,941,303"
+}, {
+	"name": "Kenya",
+	"users": "16,713,319",
+	"population": "45,545,980"
+}, {
+	"name": "Netherlands",
+	"users": "16,143,879",
+	"population": "16,802,463"
+}, {
+	"name": "Venezuela",
+	"users": "14,548,421",
+	"population": "30,851,343"
+}, {
+	"name": "Peru",
+	"users": "12,583,953",
+	"population": "30,769,077"
+}, {
+	"name": "Malaysia",
+	"users": "12,150,362",
+	"population": "30,187,896"
+}, {
+	"name": "Uzbekistan",
+	"users": "11,914,665",
+	"population": "29,324,920"
+}, {
+	"name": "Mali",
+	"users": "11,862,559",
+	"population": "15,768,227"
+}, {
+	"name": "Chile",
+	"users": "11,686,746",
+	"population": "17,772,871"
+}, {
+	"name": "Romania",
+	"users": "11,178,477",
+	"population": "21,640,168"
+}, {
+	"name": "Bangladesh",
+	"users": "10,867,567",
+	"population": "158,512,570"
+}, {
+	"name": "Kazakhstan",
+	"users": "9,850,123",
+	"population": "16,606,878"
+}, {
+	"name": "Belgium",
+	"users": "9,441,116",
+	"population": "11,144,420"
+}, {
+	"name": "Sudan",
+	"users": "9,307,189",
+	"population": "38,764,090"
+}, {
+	"name": "United Arab Emirates",
+	"users": "8,807,226",
+	"population": "9,445,624"
+}, {
+	"name": "Sweden",
+	"users": "8,581,261",
+	"population": "9,631,261"
+}, {
+	"name": "Czech Republic",
+	"users": "8,322,168",
+	"population": "10,740,468"
+}, {
+	"name": "Tanzania",
+	"users": "7,590,794",
+	"population": "50,757,459"
+}, {
+	"name": "Hungary",
+	"users": "7,388,776",
+	"population": "9,933,173"
+}, {
+	"name": "Switzerland",
+	"users": "7,180,749",
+	"population": "8,157,896"
+}, {
+	"name": "Austria",
+	"users": "7,135,168",
+	"population": "8,526,429"
+}, {
+	"name": "Portugal",
+	"users": "7,015,519",
+	"population": "10,610,304"
+}, {
+	"name": "Algeria",
+	"users": "6,669,927",
+	"population": "39,928,947"
+}, {
+	"name": "Uganda",
+	"users": "6,523,949",
+	"population": "38,844,624"
+}, {
+	"name": "Greece",
+	"users": "6,438,325",
+	"population": "11,128,404"
+}, {
+	"name": "Ecuador",
+	"users": "6,012,003",
+	"population": "15,982,551"
+}, {
+	"name": "Israel",
+	"users": "5,928,772",
+	"population": "7,822,107"
+}, {
+	"name": "Syria",
+	"users": "5,860,788",
+	"population": "21,986,615"
+}, {
+	"name": "Hong Kong SAR",
+	"users": "5,751,357",
+	"population": "7,259,569"
+}, {
+	"name": "Azerbaijan",
+	"users": "5,737,223",
+	"population": "9,514,887"
+}, {
+	"name": "Denmark",
+	"users": "5,419,113",
+	"population": "5,640,184"
+}, {
+	"name": "Ghana",
+	"users": "5,171,993",
+	"population": "26,442,178"
+}, {
+	"name": "Finland",
+	"users": "5,117,660",
+	"population": "5,443,497"
+}, {
+	"name": "Dominican Republic",
+	"users": "5,072,674",
+	"population": "10,528,954"
+}, {
+	"name": "Tunisia",
+	"users": "5,053,704",
+	"population": "11,116,899"
+}, {
+	"name": "Norway",
+	"users": "4,895,885",
+	"population": "5,091,924"
+}, {
+	"name": "Belarus",
+	"users": "4,856,969",
+	"population": "9,307,609"
+}, {
+	"name": "Yemen",
+	"users": "4,778,488",
+	"population": "24,968,508"
+}, {
+	"name": "Serbia",
+	"users": "4,705,141",
+	"population": "9,468,378"
+}, {
+	"name": "Slovakia",
+	"users": "4,507,849",
+	"population": "5,454,154"
+}, {
+	"name": "Singapore",
+	"users": "4,453,859",
+	"population": "5,517,102"
+}, {
+	"name": "Angola",
+	"users": "4,286,821",
+	"population": "22,137,261"
+}, {
+	"name": "Sri Lanka",
+	"users": "4,267,507",
+	"population": "21,445,775"
+}, {
+	"name": "New Zealand",
+	"users": "4,162,209",
+	"population": "4,551,349"
+}, {
+	"name": "Bulgaria",
+	"users": "4,083,950",
+	"population": "7,167,998"
+}, {
+	"name": "Bolivia",
+	"users": "3,970,587",
+	"population": "10,847,664"
+}, {
+	"name": "Ireland",
+	"users": "3,817,491",
+	"population": "4,677,340"
+}, {
+	"name": "Nepal",
+	"users": "3,411,948",
+	"population": "28,120,740"
+}, {
+	"name": "Jordan",
+	"users": "3,375,307",
+	"population": "7,504,812"
+}, {
+	"name": "Lebanon",
+	"users": "3,336,517",
+	"population": "4,965,914"
+}, {
+	"name": "Senegal",
+	"users": "3,194,190",
+	"population": "14,548,171"
+}, {
+	"name": "Cuba",
+	"users": "3,090,796",
+	"population": "11,258,597"
+}, {
+	"name": "Kuwait",
+	"users": "3,022,010",
+	"population": "3,479,371"
+}, {
+	"name": "Zimbabwe",
+	"users": "2,852,757",
+	"population": "14,599,325"
+}, {
+	"name": "Croatia",
+	"users": "2,780,534",
+	"population": "4,272,044"
+}, {
+	"name": "Guatemala",
+	"users": "2,716,781",
+	"population": "15,859,714"
+}, {
+	"name": "Iraq",
+	"users": "2,707,928",
+	"population": "34,768,761"
+}, {
+	"name": "Oman",
+	"users": "2,584,316",
+	"population": "3,926,492"
+}, {
+	"name": "Bosnia Herzegovina",
+	"users": "2,582,502",
+	"population": "3,824,746"
+}, {
+	"name": "Costa Rica",
+	"users": "2,511,139",
+	"population": "4,937,755"
+}, {
+	"name": "Zambia",
+	"users": "2,313,013",
+	"population": "15,021,002"
+}, {
+	"name": "Qatar",
+	"users": "2,191,866",
+	"population": "2,267,916"
+}, {
+	"name": "Georgia",
+	"users": "2,188,311",
+	"population": "4,322,842"
+}, {
+	"name": "Lithuania",
+	"users": "2,113,393",
+	"population": "3,008,287"
+}, {
+	"name": "Puerto Rico",
+	"users": "2,027,549",
+	"population": "3,683,601"
+}, {
+	"name": "Uruguay",
+	"users": "2,017,280",
+	"population": "3,418,694"
+}, {
+	"name": "Paraguay",
+	"users": "2,005,278",
+	"population": "6,917,579"
+}, {
+	"name": "Panama",
+	"users": "1,899,892",
+	"population": "3,926,017"
+}, {
+	"name": "Afghanistan",
+	"users": "1,856,781",
+	"population": "31,280,518"
+}, {
+	"name": "Albania",
+	"users": "1,798,686",
+	"population": "3,185,413"
+}, {
+	"name": "El Salvador",
+	"users": "1,742,832",
+	"population": "6,383,752"
+}, {
+	"name": "Ethiopia",
+	"users": "1,636,099",
+	"population": "96,506,031"
+}, {
+	"name": "Honduras",
+	"users": "1,602,558",
+	"population": "8,260,749"
+}, {
+	"name": "Latvia",
+	"users": "1,560,452",
+	"population": "2,041,111"
+}, {
+	"name": "Moldova",
+	"users": "1,550,925",
+	"population": "3,461,380"
+}, {
+	"name": "Slovenia",
+	"users": "1,501,039",
+	"population": "2,075,592"
+}, {
+	"name": "Cameroon",
+	"users": "1,486,815",
+	"population": "22,818,632"
+}, {
+	"name": "Mozambique",
+	"users": "1,467,687",
+	"population": "26,472,977"
+}, {
+	"name": "Jamaica",
+	"users": "1,393,381",
+	"population": "2,798,837"
+}, {
+	"name": "Libya",
+	"users": "1,362,604",
+	"population": "6,253,452"
+}, {
+	"name": "Kyrgyzstan",
+	"users": "1,359,416",
+	"population": "5,625,015"
+}, {
+	"name": "Tajikistan",
+	"users": "1,357,400",
+	"population": "8,408,947"
+}, {
+	"name": "Armenia",
+	"users": "1,300,013",
+	"population": "2,983,990"
+}, {
+	"name": "Bahrain",
+	"users": "1,297,500",
+	"population": "1,344,111"
+}, {
+	"name": "Haiti",
+	"users": "1,217,505",
+	"population": "10,461,409"
+}, {
+	"name": "Rwanda",
+	"users": "1,110,043",
+	"population": "12,100,049"
+}, {
+	"name": "Estonia",
+	"users": "1,047,772",
+	"population": "1,283,771"
+}, {
+	"name": "Nicaragua",
+	"users": "891,675",
+	"population": "6,169,269"
+}, {
+	"name": "Trinidad and Tobago",
+	"users": "856,544",
+	"population": "1,344,235"
+}, {
+	"name": "Cambodia",
+	"users": "828,317",
+	"population": "15,408,270"
+}, {
+	"name": "Burkina Faso",
+	"users": "741,888",
+	"population": "17,419,615"
+}, {
+	"name": "Cyprus",
+	"users": "726,663",
+	"population": "1,153,058"
+}, {
+	"name": "Malawi",
+	"users": "675,074",
+	"population": "16,829,144"
+}, {
+	"name": "Myanmar",
+	"users": "624,991",
+	"population": "53,718,958"
+}, {
+	"name": "Côte d'Ivoire",
+	"users": "565,874",
+	"population": "20,804,774"
+}, {
+	"name": "Mongolia",
+	"users": "514,254",
+	"population": "2,881,415"
+}, {
+	"name": "Luxembourg",
+	"users": "510,177",
+	"population": "536,761"
+}, {
+	"name": "Benin",
+	"users": "460,232",
+	"population": "10,599,510"
+}, {
+	"name": "Mauritania",
+	"users": "455,553",
+	"population": "3,984,457"
+}, {
+	"name": "Turkmenistan",
+	"users": "424,855",
+	"population": "5,307,171"
+}, {
+	"name": "Montenegro",
+	"users": "364,978",
+	"population": "621,542"
+}, {
+	"name": "Namibia",
+	"users": "347,414",
+	"population": "2,347,988"
+}, {
+	"name": "Fiji",
+	"users": "325,717",
+	"population": "887,027"
+}, {
+	"name": "Iceland",
+	"users": "321,475",
+	"population": "333,135"
+}, {
+	"name": "Togo",
+	"users": "319,822",
+	"population": "6,993,244"
+}, {
+	"name": "Chad",
+	"users": "317,197",
+	"population": "13,211,146"
+}, {
+	"name": "Martinique",
+	"users": "303,302",
+	"population": "404,705"
+}, {
+	"name": "Swaziland",
+	"users": "301,211",
+	"population": "1,267,704"
+}, {
+	"name": "Niger",
+	"users": "298,310",
+	"population": "18,534,802"
+}, {
+	"name": "Guyana",
+	"users": "295,200",
+	"population": "803,677"
+}, {
+	"name": "Bahamas",
+	"users": "293,875",
+	"population": "382,571"
+}, {
+	"name": "Brunei",
+	"users": "277,589",
+	"population": "423,205"
+}, {
+	"name": "Gambia",
+	"users": "271,711",
+	"population": "1,908,954"
+}, {
+	"name": "Botswana",
+	"users": "268,038",
+	"population": "2,038,587"
+}, {
+	"name": "Barbados",
+	"users": "224,588",
+	"population": "286,066"
+}, {
+	"name": "Bhutan",
+	"users": "211,896",
+	"population": "765,552"
+}, {
+	"name": "Guinea",
+	"users": "205,194",
+	"population": "12,043,898"
+}, {
+	"name": "Suriname",
+	"users": "201,963",
+	"population": "543,925"
+}, {
+	"name": "Cape Verde",
+	"users": "200,060",
+	"population": "503,637"
+}, {
+	"name": "Liberia",
+	"users": "190,731",
+	"population": "4,396,873"
+}, {
+	"name": "Papua New Guinea",
+	"users": "187,284",
+	"population": "7,476,108"
+}, {
+	"name": "Malta",
+	"users": "173,003",
+	"population": "430,146"
+}, {
+	"name": "Gabon",
+	"users": "168,592",
+	"population": "1,711,294"
+}, {
+	"name": "New Caledonia",
+	"users": "163,997",
+	"population": "259,824"
+}, {
+	"name": "Somalia",
+	"users": "163,185",
+	"population": "10,805,651"
+}, {
+	"name": "Central African Republic",
+	"users": "161,524",
+	"population": "4,709,203"
+}, {
+	"name": "French Polynesia",
+	"users": "161,025",
+	"population": "279,835"
+}, {
+	"name": "Burundi",
+	"users": "146,219",
+	"population": "10,482,752"
+}, {
+	"name": "Equatorial Guinea",
+	"users": "124,035",
+	"population": "778,061"
+}, {
+	"name": "Guam",
+	"users": "112,196",
+	"population": "167,546"
+}, {
+	"name": "Lesotho",
+	"users": "110,065",
+	"population": "2,097,511"
+}, {
+	"name": "Mayotte",
+	"users": "107,940",
+	"population": "228,070"
+}, {
+	"name": "Sierra Leone",
+	"users": "92,232",
+	"population": "6,205,382"
+}, {
+	"name": "Belize",
+	"users": "90,939",
+	"population": "339,758"
+}, {
+	"name": "Congo",
+	"users": "87,559",
+	"population": "4,558,594"
+}, {
+	"name": "Aruba",
+	"users": "81,945",
+	"population": "103,431"
+}, {
+	"name": "Antigua and Barbuda",
+	"users": "81,545",
+	"population": "90,903"
+}, {
+	"name": "Djibouti",
+	"users": "80,378",
+	"population": "886,313"
+}, {
+	"name": "Mauritius",
+	"users": "76,681",
+	"population": "1,249,151"
+}, {
+	"name": "Andorra",
+	"users": "71,575",
+	"population": "80,153"
+}, {
+	"name": "Bermuda",
+	"users": "63,987",
+	"population": "65,461"
+}, {
+	"name": "Eritrea",
+	"users": "59,784",
+	"population": "6,536,176"
+}, {
+	"name": "Guinea-Bissau",
+	"users": "57,764",
+	"population": "1,745,798"
+}, {
+	"name": "Seychelles",
+	"users": "50,220",
+	"population": "93,306"
+}, {
+	"name": "Comoros",
+	"users": "49,320",
+	"population": "752,438"
+}, {
+	"name": "Sao Tome and Principe",
+	"users": "48,806",
+	"population": "197,882"
+}, {
+	"name": "Grenada",
+	"users": "47,903",
+	"population": "106,303"
+}, {
+	"name": "Cayman Islands",
+	"users": "47,003",
+	"population": "59,226"
+}, {
+	"name": "Solomon Islands",
+	"users": "43,623",
+	"population": "572,865"
+}, {
+	"name": "Faeroe Islands",
+	"users": "43,605",
+	"population": "49,460"
+}, {
+	"name": "Dominica",
+	"users": "42,735",
+	"population": "72,341"
+}, {
+	"name": "Tonga",
+	"users": "40,131",
+	"population": "105,782"
+}, {
+	"name": "Greenland",
+	"users": "39,717",
+	"population": "57,164"
+}, {
+	"name": "Liechtenstein",
+	"users": "34,356",
+	"population": "37,194"
+}, {
+	"name": "Monaco",
+	"users": "34,214",
+	"population": "38,066"
+}, {
+	"name": "Vanuatu",
+	"users": "29,791",
+	"population": "258,301"
+}, {
+	"name": "Micronesia",
+	"users": "29,370",
+	"population": "103,903"
+}, {
+	"name": "Samoa",
+	"users": "26,977",
+	"population": "191,831"
+}, {
+	"name": "Maldives",
+	"users": "16,645",
+	"population": "351,572"
+}, {
+	"name": "San Marino",
+	"users": "16,631",
+	"population": "31,637"
+}, {
+	"name": "Kiribati",
+	"users": "12,156",
+	"population": "103,942"
+}, {
+	"name": "Timor-Leste",
+	"users": "11,472",
+	"population": "1,152,439"
+}, {
+	"name": "Caribbean Netherlands",
+	"users": "10,233",
+	"population": "19,525"
+}, {
+	"name": "Tuvalu",
+	"users": "3,768",
+	"population": "9,894"
+}, {
+	"name": "Cook Islands",
+	"users": "1,378",
+	"population": "20,732"
+}, {
+	"name": "Marshall Islands",
+	"users": "1,246",
+	"population": "52,772"
+}, {
+	"name": "Niue",
+	"users": "617",
+	"population": "1,307"
+}]
