@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Light.eot');
+    src: url('../fonts/Raleway-Light.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/Raleway-Light.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-ExtraBold.eot');
+    src: url('../fonts/Raleway-ExtraBold.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/Raleway-ExtraBold.ttf') format('truetype');
+    font-weight:bold;
+    font-style:normal
+}  
+
+body {
+	/*background: url('../images/noise.gif') #e2e7e1;*/
+	/*background: #000;*/
+	/*background: url('../images/body-bg.png');*/
+	font-family: Verdana, "Arial", sans-serif;
+	font-family: 'Raleway', Verdana, "Arial", sans-serif;
+	font-size: 16px;
+	color: #000;
+}
+
+.word--kidnap { 
+	font-size: 38px;
+	font-weight: bold;
+	color: #1050ff;
+	margin: 0;
+}
+
+.word--kidnap span {
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100%;
+} 
+.head-logo h3 {
+	margin: 0;
+	color: #1050ff;
+    font-size: 45px;
+}
+
+.tag {
+	color: #000; 
+    font-size: 40px;
+    margin: 15px 0 10px;
+    line-height: 55px;
+}
+
+.tag span {
+	color: #1050ff;
+	font-weight: bold;
+}
+
+.home-hero {
+	margin-top: 50px; 
+}
+
+.intro-box {
+	/*background: url(../images/intro-bg.png) no-repeat 50% 100%;*/
+	background-color: #ccefff;
+	background-size: cover;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.intro-box h2, .intro-box h3 {
+	color: #3a414b;
+}
+
+.team-box img {
+	width: 100px;
+	margin-bottom: 20px;
+}
+
+#menu, #menu li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#menu li {
+	display: inline-block;
+	padding: 10px;
+}
+#menu li a {
+	text-decoration: none;
+}
+
+#menu li a.active {
+	font-weight: bold;
+}
+
+.process-section {
+	background-color: #fff; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    padding: 30px; 
+    text-align: center;
+    line-height: 26px;
+    color: #000;
+}
+
+.process-section-1 {
+	background: url(../images/process/1.png) no-repeat #fff 0px 100%;
+}
+.process-section-2 {
+	background: url(../images/process/2.png) no-repeat #fff 100% 0%;
+}
+.process-section-3 {
+	background: url(../images/process/3.png) no-repeat #fff 50% 100%;
+	padding-bottom: 90px;
+}
+.process-section-4 {
+	background: url(../images/process/4.png) no-repeat #fff 0% 100%; 
+}
+.process-section-4 p {
+	padding: 0 50px 30px 50px;
+}
+.process-section-5 {
+	background: url(../images/process/5.png) no-repeat #fff 105% 100%;
+}
+.process-section-5 p {
+	padding-right: 150px;
+}
+
+.process-section-wrap {
+	position: relative;
+	padding-top: 100px;
+}
+.process-section-wrap::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    height: 100px;
+    width: 2px;
+    background: #1050ff;
+    margin-bottom: 20px;
+}
+
+
+
+/* responsive resets */
+/* md view */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .word--kidnap { 
+		font-size: 60px; 
+	} 
+	.head-logo h3 { 
+	    font-size: 35px;
+	} 
+	.tag { 
+	    font-size: 35px; 
+	    line-height: 45px;
+	}
+	.team-box img {
+		width: 100px;
+	}
+}
+
+/* sm view */
+@media (min-width: 768px) and (max-width: 991px) {
+    .word--kidnap { 
+		font-size: 50px; 
+	} 
+	.head-logo h3 { 
+	    font-size: 30px;
+	} 
+	.tag { 
+	    font-size: 30px; 
+	    line-height: 35px;
+	}
+	.team-box img {
+		width: 75px;
+	}
+}
+
+/* xs view */
+@media (max-width: 768px) {
+    .word--kidnap { 
+		font-size: 50px; 
+	} 
+	.head-logo h3 { 
+	    font-size: 30px;
+	} 
+	.tag { 
+	    font-size: 20px; 
+	    line-height: 25px;
+	}
+	.team-box img {
+		width: 100px;
+	}
+}
+
+@media (max-width: 400px) {
+     
+}
+
+/* from small view and less*/
+@media (max-width: 991px) {
+	 
+}
+
+ 
+
+/* xs view */
+@media (max-height: 600px) {
+     .home-hero {
+		margin-top: 100px; 
+	}
+}
+
+@media (max-height: 450px) {
+      .home-hero {
+		margin-top: 50px; 
+	}
+}
+
+/* from small view and less*/
+@media (max-width: 991px) {
+	h3.tag {
+		text-align: center;
+	}
+}
