@@ -143,6 +143,37 @@ body {
 }
 
 
+.about-section {
+	background-color: #fff; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    padding: 30px; 
+    text-align: center;
+    line-height: 26px;
+    color: #000;
+}
+
+.about-section-1 {
+	background: url(../images/about/1.png) no-repeat #fff 85% 100%;
+	padding-bottom: 40px;
+}
+.about-section-2 {
+	background: url(../images/about/2.png) no-repeat #fff 10% 0%;
+}
+.about-section-3 {
+	background: url(../images/about/3.png) no-repeat #fff 50% 0%;
+	padding-top: 70px;
+}
+.about-section-4 {
+	background: url(../images/about/4.png) no-repeat #fff 50% 100%; 
+	padding-bottom: 75px;
+}  
+
+.about-section-wrap {
+	position: relative;
+	padding-top: 50px;
+} 
+
+
 
 /* responsive resets */
 /* md view */
