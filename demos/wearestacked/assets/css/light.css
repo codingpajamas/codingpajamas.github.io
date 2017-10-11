@@ -166,12 +166,38 @@ body {
 .about-section-4 {
 	background: url(../images/about/4.png) no-repeat #fff 50% 100%; 
 	padding-bottom: 75px;
-}  
+} 
+.about-section-5 {
+	background: url(../images/about/5.a.png) no-repeat 100% 0%;  
+} 
+.about-section-5b {
+	background: url(../images/about/5.b.png) no-repeat #fff 0% 100%;  
+}   
+.about-section.about-section-6 ul {
+	text-align: left;
+}
 
 .about-section-wrap {
 	position: relative;
 	padding-top: 50px;
 } 
+
+.tech-stack,
+.tech-offer, 
+.tech-stack li,
+.tech-offer li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tech-stack li {
+	background: url(../images/about/dot.png) repeat-x 50%;  
+}
+.tech-stack li span {
+	background: #fff;
+	padding: 0 5px;
+}
 
 
 
@@ -227,8 +253,30 @@ body {
 	}
 }
 
-@media (max-width: 400px) {
-     
+@media (max-width: 500px) {
+	.tech-stack li {
+		background: transparent !important;
+		margin-bottom: 10px;
+	}
+	.tech-stack li span.pull-right {
+		float: none !important;
+	}
+
+	.about-section-5 {
+		background: url(../images/about/5.a.png) no-repeat 100% 0%;  
+	} 
+	.about-section-5b {
+		background: url(../images/about/5.b.png) no-repeat #fff -30px 100%;  
+	}  
+}
+
+@media (max-width: 400px) { 
+	.about-section-5b {
+		background: url(../images/about/5.b.png) no-repeat #fff -70px 100%;  
+	} 
+	.tech-stack li span {
+		padding: 0;
+	}
 }
 
 /* from small view and less*/
