@@ -4,7 +4,7 @@ title: "Rapid Prototyping with Laravel 5.6"
 date: 2018-08-03
 tags: [angular]
 image: /images/post/post-15.png
-status: draft
+status: published
 --- 
 
 A very basic Layout
@@ -70,6 +70,238 @@ Create `/public/css/styles.css` and include it in `resources/views/layouts/app.b
 .detail-box span { display: inline-block; margin-right: 20px; }
 .pull-right { float: right !important; }
 ~~~
+
+
+Update the layout.app and add a link to profile page
+~~~html
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="{{ url('/profile/'.Auth::user()->hash) }}">
+        Profile
+    </a>
+    <a class="dropdown-item" href="{{ route('logout') }}"
+       onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+</div>
+~~~
+
+update web.php to add the profile routes
+
+~~~php
+Route::prefix('/profile')->middleware(['auth'])->group(function () {
+    Route::get('/', 'UserController@edit');
+    Route::get('edit', 'UserController@edit');
+    Route::get('delete', 'UserController@delete'); 
+    Route::put('{hash}', 'UserController@update'); 
+    Route::delete('delete', 'UserController@destroy');
+});
+
+Route::get('/profile/{hash}', 'UserController@show');
+~~~
+
+update the UserController@show
+
+~~~php
+public function show(User $user)
+{
+    $user->load('skills');
+    return view('profile.view', compact('user'));
+}
+~~~
+
+whoah https://laravel.com/docs/5.6/routing#route-model-binding
+
+Profile view template
+
+~~~html
+@extends('layouts.app')
+
+@section('content')
+<div class="container hero-box">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="http://lorempixel.com/200/200/people/1" alt="">
+            <h3>{{$user->name}}</h3>
+            <p class="detail-box">
+                <span><i class="fa fa-map-marker"></i> {{$user->city->name}}</span>
+                @if(Auth::check() && Auth::user()->id == $user->id)
+                    <span>
+                        <a href="{{url('profile/edit')}}" class="btn btn-primary btn-sm">
+                            Edit Profile
+                        </a>
+                    </span>
+                @endif
+            </p> 
+        </div>
+    </div>
+</div>
+
+<div class="container joblist-box">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="list-group">
+                @foreach($user->skills as $skill)
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading m0">
+                            {{$skill->name}}
+                            <small class="pull-right text-primary"> 
+                                @for ($i = 0; $i < (int)$skill->pivot->rating; $i++)
+                                    <i class="fa fa-star"></i>
+                                @endfor
+
+                                @for ($i = 0; $i < 5-(int)$skill->pivot->rating; $i++)
+                                    <i class="fa fa-star-o"></i>
+                                @endfor 
+                            </small>
+                        </h4>
+                    </div> 
+                @endforeach
+            </div>
+        </div> 
+    </div>
+</div>
+@endsection
+~~~
+
+The first container contains the profile info, a static avatar, user name and address, and a edit link if the profile belongs to the authenticated user
+The second container displays the list of user skills.
+The "for loop" displays the star representation of the user's rating on the specific skill
+
+
+Next create the edit profile page, edit controller
+~~~php
+public function edit()
+{
+    $user = Auth::user();
+    $user->load(['skills', 'city']);
+
+    // get all the skills and cities for dropdown search
+    $skills = Skill::select('name', 'id')->orderBy('name', 'asc')->get();
+    $cities = City::select('name', 'id')->orderBy('name', 'asc')->get(); 
+
+    return view('profile.edit', compact(['user', 'skills', 'cities']));
+}
+~~~
+
+
+create profile/edit.blade.php
+~~~html
+@extends('layouts.app')
+
+@section('content')  
+<div class="container joblist-box">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h4 class="text-center">Personal Information</h4>
+            
+            @if (session('status'))
+                <div class="alert alert-{{session('status') == 'success' ? 'success' : 'danger'}}">
+                    {{ session('msg') }}
+                </div>
+            @endif 
+
+            <form class="list-group" method="POST" action="{{url('/profile')}}" enctype="multipart/form-data"> 
+                
+                @method('PUT')
+                @csrf
+                
+                <div class="list-group-item"> 
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text px-1"> 
+                                <!-- <img src="http://lorempixel.com/30/30/people/1" alt=""> -->
+                            </span>
+                        </div>
+                        <!-- accept="image/*" -->
+                        <input type="file" class="form-control" name="avatar" >
+                    </div>
+                </div> 
+                <div class="list-group-item">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input name="name" type="text" placeholder="Name" 
+                            value="{{old('name') ? old('name') : $user->name}}" 
+                            class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"
+                        >
+                    </div> 
+
+                    @if ($errors->has('name'))
+                        <div class="text-center text-danger">
+                            <small>{{ $errors->first('name') }}</small>
+                        </div>
+                    @endif
+                </div> 
+                <div class="list-group-item">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                        </div>
+                        <input name="address" type="text" placeholder="Address" 
+                            value="{{old('address') ? old('address') : $user->address}}" 
+                            class="form-control {{ $errors->has('address') ? ' is-invalid' : '' }}"
+                        >
+                    </div>  
+                    @if ($errors->has('address'))
+                        <div class="text-center text-danger">
+                            <small>{{ $errors->first('address') }}</small>
+                        </div>
+                    @endif
+                </div>  
+                <div class="list-group-item">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-globe"></i>
+                            </span>
+                        </div>
+                        <select name="city" id="" class="form-control {{ $errors->has('city') ? ' is-invalid' : '' }}">
+                            <option value="">Select a City</option>
+                            @foreach($cities as $city)
+                                <option value="{{$city->id}}" @if($city->id == $user->city_id) selected @endif>{{$city->name}}</option>
+                            @endforeach
+                        </select>
+                    </div> 
+                    @if ($errors->has('city'))
+                        <div class="text-center text-danger">
+                            <small>{{ $errors->first('city') }}</small>
+                        </div>
+                    @endif 
+                </div> 
+                <div class="list-group-item text-center">
+                    <input type="submit" value="Save Changes" class="btn btn-block btn-primary">
+                </div>  
+            </form>
+        </div> 
+    </div>
+</div>
+@endsection
+~~~
+
+The container above contains a profile form
+
+Next let's add a functionality for a user to add/edit/remove his skills
+
+create new routes inside the profile group
+
+~~~php
+Route::post('/skill', 'UserController@skill_store'); 
+Route::put('/skill/{id}', 'UserController@skill_update'); 
+Route::delete('/skill/{id}', 'UserController@skill_destroy'); 
+~~~
+
+
+
 
 create a local scope on JobPost model for the search functionality
 
