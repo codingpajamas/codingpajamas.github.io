@@ -301,6 +301,88 @@ Route::delete('/skill/{id}', 'UserController@skill_destroy');
 ~~~
 
 
+Now now that the edit profile is done, let's go back and fix the displaying of avatar by creating our image server
+
+~~~php
+Route::get('/image/{folder}/{width}/{height}/{img_name}', 'HomeController@image_crop');
+Route::get('/image/{img_name}', 'HomeController@image_full');
+~~~
+
+~~~php
+// HomeController
+use InterImg;
+
+public function image_crop($folder, $width, $height, $img_name)
+{
+    try 
+    {
+        $path = storage_path().'/app/'. $folder .'/' . $img_name; 
+        $img = InterImg::make($path)->fit($width, $height); 
+    }
+    catch(\Exception $e)
+    {
+        $img = InterImg::canvas($width, $height, '#aaaaaa');
+    }
+
+    return $img->response('jpg');
+}
+
+public function image_full($folder, $img_name)
+{
+    try 
+    {
+        $path = storage_path().'/app/'. $folder .'/' . $img_name;
+        $img = InterImg::make($path); 
+    }
+    catch(\Exception $e)
+    {
+        $img = InterImg::canvas($width, $height, '#aaaaaa');
+    }
+
+    return $img->response('jpg');
+} 
+~~~
+
+~~~html
+@if($user->avatar)
+    <p><img src="{{url('image/avatar/200/200/'.$user->avatar)}}" class="img-thumbnail"></p>
+@endif
+~~~
+
+
+## Createing company
+
+Prepare the routes
+
+~~~php
+Route::prefix('/companies')->middleware(['auth'])->group(function () {
+    Route::get('/', 'CompanyController@index');
+    Route::get('/new', 'CompanyController@create'); 
+    Route::get('/{company}/edit', 'CompanyController@edit');
+    Route::get('/{company}/delete', 'CompanyController@delete');
+    Route::post('/', 'CompanyController@store'); 
+    Route::put('/{company}', 'CompanyController@update'); 
+    Route::delete('/{company}', 'CompanyController@destroy');   
+});
+
+Route::get('/companies/{company}', 'CompanyController@show');
+~~~
+
+update layout/app.blade.php dropdown menu to include company link
+
+CompanyController@index code
+
+companies/index.blade.php code
+
+CompanyController@create code
+
+companies/create.blade.php code
+
+CompanyController@store code - explain $guarded vs $fillable 
+
+
+
+
 
 
 create a local scope on JobPost model for the search functionality
