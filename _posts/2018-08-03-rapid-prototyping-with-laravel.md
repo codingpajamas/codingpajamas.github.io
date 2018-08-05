@@ -378,6 +378,8 @@ CompanyController@create code
 
 companies/create.blade.php code
 
+companies/form.blade.php code - explain include and form structure
+
 CompanyController@store code - explain $guarded vs $fillable 
 
 
