@@ -350,7 +350,7 @@ public function image_full($folder, $img_name)
 ~~~
 
 
-## Createing company
+## Creating company
 
 Prepare the routes
 
@@ -395,6 +395,12 @@ companies/delete.blade.php code
 CompanyController@destroy code - compare delete and softdelete
 deleting relationship with ->onDelete('cascade'), or Model::deleting in Model@boot()
 be careful in deleting - you can be sloppy at prototyping stage but always consider future updates and scalability of the project
+
+
+## Jobs Module
+
+prepare the jobs route group
+
 
 
 
