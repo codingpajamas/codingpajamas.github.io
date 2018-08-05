@@ -382,6 +382,25 @@ companies/form.blade.php code - explain include and form structure
 
 CompanyController@store code - explain $guarded vs $fillable 
 
+CompanyController@show code
+
+companies/view.blade.php code
+
+CompanyController@update code - explain the "arrUpateFileds" and "back()"
+
+CompanyController@delete code - explain why delete was needed
+
+companies/delete.blade.php code
+
+CompanyController@destroy code - compare delete and softdelete
+deleting relationship with ->onDelete('cascade'), or Model::deleting in Model@boot()
+be careful in deleting - you can be sloppy at prototyping stage but always consider future updates and scalability of the project
+
+
+
+
+
+
 
 
 
