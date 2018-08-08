@@ -401,6 +401,22 @@ be careful in deleting - you can be sloppy at prototyping stage but always consi
 
 prepare the jobs route group
 
+create the list of jobs for the auth user
+
+JobPostController@myjobposts code - explain why whereHas and not whereIn from array of "myCompanies" : to make sure that only include owned company
+
+jobs/index.blade.php code
+
+JobPostController@show code
+
+jobs/show.blade.php code
+
+JobPostController@edit code
+
+jobs/edit.blade.php code
+
+jobs/form.blade.php code
+
 
 
 
