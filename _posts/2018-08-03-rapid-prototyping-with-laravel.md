@@ -401,6 +401,8 @@ be careful in deleting - you can be sloppy at prototyping stage but always consi
 
 prepare the jobs route group
 
+update layout/app.blade.php dropdown menu to include jobs link
+
 create the list of jobs for the auth user
 
 JobPostController@myjobposts code - explain why whereHas and not whereIn from array of "myCompanies" : to make sure that only include owned company
@@ -417,10 +419,39 @@ jobs/edit.blade.php code
 
 jobs/form.blade.php code
 
+explain "protected $guarded = ['id'];" to avoid : Add [title] to fillable property to allow mass assignment on [App\JobPost].
+
+JobPostController@create code
+
+jobs/create.blade.php code
+
+JobPostController@store code
 
 
 
+## Application Module
 
+prepare the application route group
+
+jobs/application.blade.php code 
+
+prepare functions.js and add it in layout/app
+
+jquery ajax to submit application tag code
+
+ApplicationController@update code
+
+update apply button on job/show.blade.php
+
+add apply modal on job/show.blade.php
+
+ApplicationController@store code
+
+ApplicationController@index code
+
+profile/applications.blade.php code 
+
+explaing why created_at in applicationtableseeder
 
 
 
