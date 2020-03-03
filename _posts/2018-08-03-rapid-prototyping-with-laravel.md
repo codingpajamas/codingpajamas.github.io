@@ -4,7 +4,7 @@ title: "Rapid Prototyping with Laravel 5.6"
 date: 2018-08-03
 tags: [angular]
 image: /images/post/post-15.png
-status: published
+status: draft
 --- 
 
 A very basic Layout
